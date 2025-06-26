@@ -1,0 +1,140 @@
+.kitchen-coach-banner-area {
+    background-color: #f9f9f9;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    padding: {
+        top: 100px;
+        bottom: 100px;
+    };
+    .container-fluid {
+        padding: {
+            left: 40px;
+            right: 40px;
+        };
+    }
+    &::before {
+        top: 0;
+        left: 0;
+        content: "";
+        z-index: -1;
+        height: 100%;
+        width: 350px;
+        position: absolute;
+        background-color: var(--sparklingAppleColor);
+    }
+}
+.kitchen-coach-banner-content {
+    max-width: 625px;
+    padding-left: 50px;
+
+    h1 {
+        margin-bottom: 25px;
+        font-size: 65px;
+    }
+    p {
+        font: {
+            size: 16px;
+            weight: 600;
+        };
+    }
+    .default-btn {
+        margin-top: 15px;
+        background-color: var(--sparklingAppleColor);
+    }
+}
+
+@media only screen and (max-width: 767px) {
+
+    .kitchen-coach-banner-area {
+        padding: {
+            top: 60px;
+            bottom: 60px;
+        };
+        .container-fluid {
+            padding: {
+                right: var(--bs-gutter-x,.75rem);
+                left: var(--bs-gutter-x,.75rem);
+            };
+        }
+        &::before {
+            display: none;
+        }
+    }
+    .kitchen-coach-banner-content {
+        padding-left: 0;
+        margin-top: 30px;
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+    }
+
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+
+    .kitchen-coach-banner-area {
+        .container-fluid {
+            max-width: 540px;
+        }
+    }
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .kitchen-coach-banner-area {
+        padding: {
+            top: 90px;
+            bottom: 90px;
+        };
+        .container-fluid {
+            max-width: 720px;
+            padding: {
+                right: var(--bs-gutter-x,.75rem);
+                left: var(--bs-gutter-x,.75rem);
+            };
+        }
+        &::before {
+            display: none;
+        }
+    }
+    .kitchen-coach-banner-content {
+        padding-left: 0;
+        margin-top: 30px;
+
+        h1 {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+    }
+
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+    .kitchen-coach-banner-content {
+        h1 {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+    }
+
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1355px) {}
+
+@media only screen and (min-width: 1550px) {
+
+    .kitchen-coach-banner-area {
+        .container-fluid {
+            padding: {
+                left: 120px;
+                right: 120px;
+            };
+        }
+    }
+
+}

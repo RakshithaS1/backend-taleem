@@ -1,0 +1,175 @@
+.kitchen-about-content {
+    .sub-title {
+        color: var(--sparklingAppleColor);
+        text-transform: uppercase;
+        margin-bottom: 15px;
+        display: block;
+        font: {
+            size: 14px;
+            weight: 600;
+        };
+    }
+    h2 {
+        margin-bottom: 18px;
+        font-size: 36px;
+    }
+    .features-list {
+        list-style-type: none;
+        flex-wrap: wrap;
+        padding-left: 0;
+        display: flex;
+        margin: {
+            bottom: 0;
+            top: -5px;
+            left: -8px;
+            right: -8px;
+        };
+        li {
+            flex: 0 0 50%;
+            max-width: 50%;
+            padding: {
+                left: 8px;
+                top: 16px;
+                right: 8px;
+            };
+            span {
+                display: block;
+                position: relative;
+                color: var(--blackColor);
+                font: {
+                    size: 18px;
+                    weight: 700;
+                };
+                padding: {
+                    left: 50px;
+                    bottom: 5px;
+                    top: 5px;
+                };
+                i {
+                    left: 0;
+                    top: -2px;
+                    width: 40px;
+                    height: 40px;
+                    font-size: 25px;
+                    overflow: hidden;
+                    font-weight: 500;
+                    line-height: 40px;
+                    text-align: center;
+                    position: absolute;
+                    color: var(--sparklingAppleColor);
+                    background: {
+                        image: url(../../../../../public/img/circle-border.png);
+                        position: center center;
+                        repeat: no-repeat;
+                        size: cover;
+                    };
+                }
+            }
+        }
+    }
+    .about-btn {
+        margin-top: 30px;
+
+        .default-btn {
+            background-color: var(--sparklingAppleColor);
+        }
+    }
+}
+.kitchen-about-image {
+    padding-left: 30px;
+    position: relative;
+    z-index: 1;
+    margin: {
+        left: 30px;
+        bottom: 30px;
+    };
+    &::before {
+        left: 0;
+        width: 95%;
+        content: "";
+        height: 95%;
+        z-index: -1;
+        bottom: -30px;
+        position: absolute;
+        background-color: var(--sparklingAppleColor);
+    }
+}
+
+@media only screen and (max-width: 767px) {
+
+    .kitchen-about-content {
+        .sub-title {
+            font-size: 12.5px;
+        }
+        h2 {
+            font-size: 24px;
+        }
+        .features-list {
+            margin-top: -10px;
+
+            li {
+                span {
+                    font-size: 16px;
+                    padding: {
+                        top: 0;
+                        left: 0;
+                        bottom: 0;
+                    };
+                    i {
+                        top: 0;
+                        left: 0;
+                        width: 35px;
+                        height: 35px;
+                        display: block;
+                        font-size: 20px;
+                        line-height: 35px;
+                        margin: 0 auto 5px;
+                        position: relative;
+                    }
+                }
+            }
+        }
+    }
+    .kitchen-about-image {
+        padding-left: 0;
+        margin: {
+            left: 0;
+            bottom: 0;
+            top: 30px;
+        };
+        &::before {
+            display: none;
+        }
+    }
+
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .kitchen-about-content {
+        h2 {
+            font-size: 30px;
+        }
+    }
+    .kitchen-about-image {
+        margin-left: 0;
+        margin-top: 30px;
+    }
+
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+    .kitchen-about-content {
+        h2 {
+            font-size: 30px;
+        }
+    }
+
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1355px) {}
+
+@media only screen and (min-width: 1550px) {}

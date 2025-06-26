@@ -1,0 +1,238 @@
+<div
+    class="container"
+    [ngClass]="{'d-none': router.url === '/online-art' || router.url === '/single-instructor'}"
+>
+    <div class="section-title">
+        <span class="sub-title">News and Blogs</span>
+        <h2>Our Latest Publications</h2>
+        <p>We always give extra care to our student's skills improvements and feel excited to share our latest research and learnings!</p>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-lg-4 col-md-6">
+            <div class="single-blog-post">
+                <div class="post-image">
+                    <a routerLink="/single-blog-1" class="d-block">
+                        <img src="img/blog/img1.jpg" alt="image">
+                    </a>
+                </div>
+                <div class="post-content">
+                    <a routerLink="/blog-1" class="category">Education</a>
+                    <h3><a routerLink="/single-blog-1">University Admissions Could Face Emergency Controls</a></h3>
+                    <ul class="post-content-footer d-flex justify-content-between align-items-center">
+                        <li>
+                            <div class="post-author d-flex align-items-center">
+                                <img src="img/user1.jpg" class="rounded-circle" alt="image">
+                                <span>Alex Morgan</span>
+                            </div>
+                        </li>
+                        <li><i class='flaticon-calendar'></i> April 30, 2025</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <div class="single-blog-post">
+                <div class="post-image">
+                    <a routerLink="/single-blog-1" class="d-block">
+                        <img src="img/blog/img2.jpg" alt="image">
+                    </a>
+                </div>
+                <div class="post-content">
+                    <a routerLink="/blog-1" class="category">Online</a>
+                    <h3><a routerLink="/single-blog-1">Online Learning Can Prepare Students For A Fast-Changing</a></h3>
+                    <ul class="post-content-footer d-flex justify-content-between align-items-center">
+                        <li>
+                            <div class="post-author d-flex align-items-center">
+                                <img src="img/user2.jpg" class="rounded-circle" alt="image">
+                                <span>Sarah Taylor</span>
+                            </div>
+                        </li>
+                        <li><i class='flaticon-calendar'></i> April 29, 2025</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <div class="single-blog-post">
+                <div class="post-image">
+                    <a routerLink="/single-blog-1" class="d-block">
+                        <img src="img/blog/img3.jpg" alt="image">
+                    </a>
+                </div>
+                <div class="post-content">
+                    <a routerLink="/blog-1" class="category">Learning</a>
+                    <h3><a routerLink="/single-blog-1">As Learning Moves Online, Trigger Warnings Must Too</a></h3>
+                    <ul class="post-content-footer d-flex justify-content-between align-items-center">
+                        <li>
+                            <div class="post-author d-flex align-items-center">
+                                <img src="img/user3.jpg" class="rounded-circle" alt="image">
+                                <span>David Warner</span>
+                            </div>
+                        </li>
+                        <li><i class='flaticon-calendar'></i> April 28, 2025</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12 col-md-12">
+            <div class="blog-post-info">
+                <p>Get into details now?​ <a routerLink="/blog-1">View all posts</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- This section for Online Art Demo -->
+<div
+    class="oa-blog-area pt-100 pb-70 d-none"
+    [ngClass]="{'d-block': router.url === '/online-art'}"
+>
+    <div class="container">
+        <div class="section-title oa-title-color">
+            <span class="sub-title">OUR BLOG</span>
+            <h2>Latest Articles from eCademy</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6">
+                <div class="oa-blog-card">
+                    <div class="blog-image">
+                        <a routerLink="/single-blog-1">
+                            <img src="img/online-art/blog/blog1.jpg" alt="image">
+                        </a>
+                    </div>
+                    <div class="blog-content">
+                        <ul class="meta">
+                            <li>
+                                <a routerLink="/blog-1">Artist</a>
+                            </li>
+                            <li>April 30, 2025</li>
+                        </ul>
+                        <h3>
+                            <a routerLink="/single-blog-1">Vibrant Abstract Painting</a>
+                        </h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="oa-blog-card">
+                    <div class="blog-image">
+                        <a routerLink="/single-blog-1">
+                            <img src="img/online-art/blog/blog2.jpg" alt="image">
+                        </a>
+                    </div>
+                    <div class="blog-content">
+                        <ul class="meta">
+                            <li>
+                                <a routerLink="/blog-1">Artist</a>
+                            </li>
+                            <li>April 30, 2025</li>
+                        </ul>
+                        <h3>
+                            <a routerLink="/single-blog-1">Helping Artists Launch Web</a>
+                        </h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="oa-blog-card">
+                    <div class="blog-image">
+                        <a routerLink="/single-blog-1">
+                            <img src="img/online-art/blog/blog3.jpg" alt="image">
+                        </a>
+                    </div>
+                    <div class="blog-content">
+                        <ul class="meta">
+                            <li>
+                                <a routerLink="/blog-1">Artist</a>
+                            </li>
+                            <li>April 30, 2025</li>
+                        </ul>
+                        <h3>
+                            <a routerLink="/single-blog-1">Socially Engaged Art</a>
+                        </h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- This section for Single Instructor Demo -->
+<div
+    class="oa-blog-area instructor-blog pt-100 pb-70 d-none"
+    [ngClass]="{'d-block': router.url === '/single-instructor'}"
+>
+    <div class="container">
+        <div class="section-title instructor-title-color">
+            <span class="sub-title">OUR BLOG</span>
+            <h2 class="el-messiri-font">Latest Articles from eCademy</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6">
+                <div class="oa-blog-card">
+                    <div class="blog-image">
+                        <a routerLink="/single-blog-1">
+                            <img src="img/instructor-home/blog/blog1.jpg" alt="image">
+                        </a>
+                    </div>
+                    <div class="blog-content">
+                        <ul class="meta">
+                            <li>
+                                <a routerLink="/blog-1">Artist</a>
+                            </li>
+                            <li>April 30, 2025</li>
+                        </ul>
+                        <h3 class="el-messiri-font">
+                            <a routerLink="/single-blog-1">Vibrant Abstract Painting</a>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="oa-blog-card">
+                    <div class="blog-image">
+                        <a routerLink="/single-blog-1">
+                            <img src="img/instructor-home/blog/blog2.jpg" alt="image">
+                        </a>
+                    </div>
+                    <div class="blog-content">
+                        <ul class="meta">
+                            <li>
+                                <a routerLink="/blog-1">Artist</a>
+                            </li>
+                            <li>April 30, 2025</li>
+                        </ul>
+                        <h3 class="el-messiri-font">
+                            <a routerLink="/single-blog-1">Helping Artists Launch Web</a>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="oa-blog-card">
+                    <div class="blog-image">
+                        <a routerLink="/single-blog-1">
+                            <img src="img/instructor-home/blog/blog3.jpg" alt="image">
+                        </a>
+                    </div>
+                    <div class="blog-content">
+                        <ul class="meta">
+                            <li>
+                                <a routerLink="/blog-1">Artist</a>
+                            </li>
+                            <li>April 30, 2025</li>
+                        </ul>
+                        <h3 class="el-messiri-font">
+                            <a routerLink="/single-blog-1">Socially Engaged Art</a>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

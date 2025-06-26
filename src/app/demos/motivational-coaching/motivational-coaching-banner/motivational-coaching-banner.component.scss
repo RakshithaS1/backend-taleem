@@ -1,0 +1,216 @@
+.motivation-banner-area {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    background: {
+        position: center center;
+        repeat: no-repeat;
+        size: cover;
+    };
+    .container {
+        position: relative;
+    }
+    .social-links {
+        top: 45%;
+        right: -21.5%;
+        padding-left: 0;
+        margin-bottom: 0;
+        position: absolute;
+        list-style-type: none;
+        transform: rotate(-90deg) translateY(-45%);
+
+        li {
+            display: inline-block;
+            margin-right: 20px;
+
+            a {
+                display: block;
+                font-weight: 600;
+                text-decoration: underline;
+            }
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+    &::before {
+        background-color: var(--whiteColor);
+        position: absolute;
+        opacity: 0.5;
+        height: 100%;
+        width: 105px;
+        content: "";
+        right: 0;
+        top: 0;
+    }
+}
+.motivation-banner-content {
+    position: relative;
+    top: -30px;
+
+    .sub-title {
+        margin-bottom: 18px;
+        display: inline-block;
+        color: var(--mainColor);
+        font: {
+            size: 20px;
+            weight: 400;
+        };
+    }
+    h1 {
+        margin-bottom: 25px;
+
+        font: {
+            size: 55px;
+            weight: 700;
+        };
+    }
+    p {
+        max-width: 580px;
+        font: {
+            size: 16px;
+            weight: 600;
+        };
+    }
+    .default-btn {
+        margin-top: 15px;
+    }
+}
+.motivation-banner-image {
+    text-align: center;
+}
+
+@media only screen and (max-width: 767px) {
+
+    .motivation-banner-area {
+        padding-top: 60px;
+
+        .social-links {
+            right: 0;
+            top: unset;
+            transform: unset;
+            position: relative;
+            transform: unset;
+            margin-bottom: 55px;
+            text-align: center;
+
+            li {
+                margin-right: 10px;
+            }
+        }
+        &::before {
+            display: none;
+        }
+    }
+    .motivation-banner-content {
+        text-align: center;
+
+        .sub-title {
+            margin-bottom: 12px;
+            font-size: 15px;
+        }
+        h1 {
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+    }
+
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .motivation-banner-area {
+        padding-top: 80px;
+
+        .social-links {
+            right: 0;
+            top: unset;
+            transform: unset;
+            position: relative;
+            transform: unset;
+            margin-bottom: 55px;
+
+            li {
+                margin-right: 10px;
+            }
+        }
+        &::before {
+            display: none;
+        }
+    }
+    .motivation-banner-content {
+        .sub-title {
+            font-size: 16px;
+        }
+        h2 {
+            font-size: 45px;
+        }
+    }
+
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+    .motivation-banner-area {
+        .social-links {
+            right: 0;
+            top: 115px;
+            transform: unset;
+            position: relative;
+            transform: unset;
+            margin-bottom: 55px;
+
+            li {
+                margin-right: 10px;
+            }
+        }
+        &::before {
+            display: none;
+        }
+    }
+    .motivation-banner-content {
+        top: -18px;
+    }
+
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1355px) {
+
+    .motivation-banner-area {
+        .social-links {
+            right: 0;
+            top: 192px;
+            transform: unset;
+            position: relative;
+            transform: unset;
+            margin-bottom: 55px;
+
+            li {
+                margin-right: 10px;
+            }
+        }
+        &::before {
+            display: none;
+        }
+    }
+    .motivation-banner-content {
+        top: -20px;
+    }
+
+}
+
+@media only screen and (min-width: 1550px) {
+
+    .motivation-banner-area {
+        .social-links {
+            right: -30.8%;
+            transform: rotate(-90deg);
+        }
+        &::before {
+            width: 240px;
+        }
+    }
+
+}

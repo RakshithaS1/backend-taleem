@@ -1,0 +1,240 @@
+.oa-quote-inner-box {
+    border-radius: 100px 25px 25px 25px;
+    background-color: #E0F2F6;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    padding: {
+        top: 50px;
+        left: 70px;
+        right: 70px;
+        bottom: 50px;
+    };
+    .quote-shape {
+        animation: moveleftbounce 4s linear infinite;
+        position: absolute;
+        right: 20px;
+        z-index: -1;
+        top: 20px;
+    }
+}
+.oa-quote-image {
+    border-radius: 90px 20px 20px 20px;
+    overflow: hidden;
+
+    img {
+        border-radius: 90px 20px 20px 20px;
+        transition: var(--transition);
+    }
+    &:hover {
+        img {
+            transform: scale(1.1);
+        }
+    }
+}
+.oa-quote-content {
+    padding-left: 35px;
+
+    img {
+        margin-bottom: 30px;
+    }
+    p {
+        color: var(--blackColor);
+        margin-bottom: 20px;
+        font: {
+            size: 25px;
+            weight: 600;
+        };
+    }
+    span {
+        z-index: 1;
+        position: relative;
+        padding-left: 40px;
+        color: var(--mainColor);
+        font: {
+            size: 18px;
+            weight: 500;
+        };
+        &::before {
+            background-color: var(--mainColor);
+            transform: translateY(-50%);
+            position: absolute;
+            height: 1.5px;
+            content: "";
+            z-index: -1;
+            width: 30px;
+            left: 0;
+            top: 50%;
+        }
+    }
+}
+.d-none {
+    &.d-block {
+        display: block !important;
+    }
+}
+.instructor-quote-inner-box {
+    background-color: #EFF7FF;
+    border-radius: 25px;
+    padding: {
+        top: 50px;
+        bottom: 50px;
+        left: 70px;
+        right: 70px;
+    };
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+
+    .quote-shape {
+        position: absolute;
+        right: 30px;
+        top: 20px;
+        z-index: -1;
+        animation: moveleftbounce 4s linear infinite;
+    }
+}
+.instructor-quote-content {
+    padding-left: 35px;
+
+    img {
+        margin-bottom: 30px;
+    }
+    p {
+        font-size: 25px;
+        font-weight: 600;
+        color: var(--blackColor);
+        margin-bottom: 20px;
+    }
+    span {
+        color: #FF8703;
+        font-size: 18px;
+        font-weight: 500;
+        position: relative;
+        z-index: 1;
+        padding-left: 40px;
+
+        &::before {
+            position: absolute;
+            content: "";
+            height: 1.5px;
+            width: 30px;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #FF8703;
+            z-index: -1;
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .oa-quote-inner-box {
+        padding: 20px 15px;
+        border-radius: 15px 5px 5px 5px;
+    }
+    .oa-quote-content {
+        padding-left: 0;
+        margin-top: 30px;
+
+        img {
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 17px;
+            margin-bottom: 12px;
+        }
+        span {
+            font-size: 14px;
+        }
+    }
+    .oa-quote-image {
+        border-radius: 15px 5px 5px 5px;
+
+        img {
+            border-radius: 15px 5px 5px 5px;
+        }
+    }
+    .instructor-quote-inner-box {
+        padding: 20px;
+    }
+    .instructor-quote-content {
+        padding-left: 0;
+        margin-top: 35px;
+
+        p {
+            font-size: 18px;
+        }
+        span {
+            font-size: 15px;
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {
+
+    .oa-quote-inner-box {
+        padding: 35px;
+        border-radius: 30px 15px 15px 15px;
+    }
+    .oa-quote-content {
+        padding-left: 0;
+        margin-top: 30px;
+
+        p {
+            font-size: 20px;
+        }
+        span {
+            font-size: 16px;
+        }
+    }
+    .oa-quote-image {
+        border-radius: 30px 15px 15px 15px;
+
+        img {
+            border-radius: 30px 15px 15px 15px;
+        }
+    }
+    .instructor-quote-inner-box {
+        padding: 35px;
+    }
+    .instructor-quote-content {
+        padding-left: 0;
+        margin-top: 35px;
+
+        p {
+            font-size: 20px;
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {
+
+    .oa-quote-inner-box {
+        padding: 35px;
+        border-radius: 50px 15px 15px 15px;
+    }
+    .oa-quote-image {
+        border-radius: 50px 15px 15px 15px;
+
+        img {
+            border-radius: 50px 15px 15px 15px;
+        }
+    }
+
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

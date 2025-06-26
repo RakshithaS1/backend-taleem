@@ -1,0 +1,49 @@
+@use "../../../common/courses/courses.component.scss" as courses;
+
+.kitchen-courses-area {
+    .section-title {
+        .sub-title {
+            color: var(--sparklingAppleColor);
+        }
+    }
+    .single-courses-box {
+        .courses-image {
+            .price {
+                background-color: var(--sparklingAppleColor);
+            }
+            .fav {
+                &:hover {
+                    color: var(--sparklingAppleColor);
+                }
+            }
+        }
+        .courses-content {
+            h3 {
+                a {
+                    &:hover {
+                        color: var(--sparklingAppleColor);
+                    }
+                }
+            }
+            .course-author {
+                span {
+                    color: var(--sparklingAppleColor);
+                }
+            }
+            .courses-box-footer {
+                li {
+                    i {
+                        color: var(--sparklingAppleColor);
+                    }
+                }
+            }
+        }
+    }
+    .courses-info {
+        p {
+            a {
+                color: var(--sparklingAppleColor);
+            }
+        }
+    }
+}

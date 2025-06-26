@@ -1,0 +1,77 @@
+<div
+    class="funfacts-area bg-f5f7fa"
+    [ngClass]="{'d-none': router.url === '/single-instructor'}"
+>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-6">
+                <div class="single-funfacts-item">
+                    <h3>1926</h3>
+                    <p>Finished Sessions</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6">
+                <div class="single-funfacts-item">
+                    <h3>3279</h3>
+                    <p>Enrolled Learners</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6">
+                <div class="single-funfacts-item">
+                    <h3>250</h3>
+                    <p>Online Instructors</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6">
+                <div class="single-funfacts-item">
+                    <h3>100%</h3>
+                    <p>Satisfaction Rate</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- This section for Single Instructor Demo -->
+<div
+    class="instructor-funfacts-area pt-100 pb-70 d-none"
+    [ngClass]="{'d-block': router.url === '/single-instructor'}"
+>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-4 col-sm-6 col-6">
+                <div class="instructor-funfacts-box">
+                    <div class="content">
+                        <div class="image-icon">
+                            <img src="img/instructor-home/funfacts/img1.svg" alt="image">
+                        </div>
+                        <h3 class="el-messiri-font">3296</h3>
+                        <p>ENROLLED LEARNERS</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 col-6">
+                <div class="instructor-funfacts-box">
+                    <div class="content">
+                        <div class="image-icon">
+                            <img src="img/instructor-home/funfacts/img2.svg" alt="image">
+                        </div>
+                        <h3 class="el-messiri-font">5785</h3>
+                        <p>FINISHED SESSIONS</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 col-6">
+                <div class="instructor-funfacts-box">
+                    <div class="content">
+                        <div class="image-icon">
+                            <img src="img/instructor-home/funfacts/img3.svg" alt="image">
+                        </div>
+                        <h3 class="el-messiri-font">100%</h3>
+                        <p>SATISFACTION RATE</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

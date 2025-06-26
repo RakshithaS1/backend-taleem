@@ -1,0 +1,92 @@
+@use "../features-style-one/features-style-one.component.scss" as features;
+@use "../funfacts-style-four/funfacts-style-four.component.scss" as funfacts;
+
+.motivation-features-area {
+    position: relative;
+    z-index: 1;
+
+    .single-features-box {
+        &.without-bg {
+            border: 1px solid #f9f9f9;
+            background-color: var(--whiteColor) !important;
+        }
+    }
+    .funfacts-box {
+        border: 1px dashed #AD8360;
+        transition: var(--transition);
+        background-color: var(--whiteColor);
+
+        &:hover {
+            transform: translateY(-10px);
+        }
+    }
+    &::before {
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: -1;
+        content: '';
+        height: 450px;
+        position: absolute;
+        background-color: var(--whiteColor);
+    }
+}
+
+@media only screen and (max-width: 767px) {
+
+    .motivation-features-area {
+        &::before {
+            display: none;
+        }
+        .single-features-box {
+            &.without-bg {
+                background-color: transparent !important;
+            }
+        }
+        .funfacts-box {
+            border: none;
+            background-color: transparent;
+        }
+    }
+
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .motivation-features-area {
+        &::before {
+            display: none;
+        }
+        .single-features-box {
+            &.without-bg {
+                background-color: transparent !important;
+            }
+        }
+        .funfacts-box {
+            border: none;
+            background-color: transparent;
+        }
+    }
+
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+    .motivation-features-area {
+        &::before {
+            display: none;
+        }
+        .single-features-box {
+            &.without-bg {
+                background-color: transparent !important;
+            }
+        }
+    }
+
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1355px) {}
+
+@media only screen and (min-width: 1550px) {}

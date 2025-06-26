@@ -1,0 +1,37 @@
+@use "../subscribe/subscribe.component.scss" as subscribe;
+
+.kitchen-inner-subscribe {
+    border-radius: 5px;
+    background: {
+        position: center center;
+        repeat: no-repeat;
+        size: cover;
+    };
+    .subscribe-content {
+        .sub-title {
+            color: var(--whiteColor);
+            margin-bottom: 18px;
+        }
+        h2 {
+            color: var(--whiteColor);
+        }
+        p {
+            color: var(--whiteColor);
+        }
+        .newsletter-form {
+            .input-newsletter {
+                background-color: #5E8F38;
+                color: var(--whiteColor);
+
+                &::placeholder {
+                    color: var(--whiteColor);
+                }
+                &:focus {
+                    &::placeholder {
+                        color: transparent;
+                    }
+                }
+            }
+        }
+    }
+}

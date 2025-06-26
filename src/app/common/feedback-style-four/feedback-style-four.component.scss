@@ -1,0 +1,135 @@
+.coaching-feedback-image {
+    text-align: center;
+    border-radius: 15px 15px 0 0;
+
+    img {
+        border-radius: 15px 15px 0 0;
+    }
+}
+.single-coaching-feedback-box {
+    padding-left: 30px;
+    position: relative;
+    z-index: 1;
+
+    p {
+        color: #221638;
+        line-height: 1.8;
+        margin-bottom: 0;
+        font-size: 20px;
+    }
+    .client-info {
+        margin-top: 25px;
+
+        img {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+        }
+        .title {
+            margin-left: 15px;
+
+            h3 {
+                color: var(--mainColor);
+                margin-bottom: 0;
+                font: {
+                    size: 17px;
+                    weight: 700;
+                };
+            }
+            span {
+                color: var(--optionalColor);
+                display: block;
+                font-size: 14px;
+                margin-top: 4px;
+            }
+        }
+    }
+    &::before {
+        top: 0;
+        opacity: .8;
+        right: 50px;
+        z-index: -1;
+        line-height: 1;
+        color: #e8e8e8;
+        content: "\f10a";
+        font-size: 150px;
+        position: absolute;
+        font-family: Flaticon;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+
+    .coaching-feedback-image {
+        margin-bottom: 25px;
+    }
+    .coaching-feedback-slides {
+        margin-bottom: 60px;
+    }
+    .single-coaching-feedback-box {
+        padding-left: 0;
+
+        p {
+            font-size: 15px;
+        }
+        .client-info {
+            margin-top: 15px;
+
+            .title {
+                h3 {
+                    font-size: 15px;
+                }
+                span {
+                    font-size: 13px;
+                    margin-top: 5px;
+                }
+            }
+        }
+    }
+
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .coaching-feedback-image {
+        margin-bottom: 30px;
+    }
+    .coaching-feedback-slides {
+        margin-bottom: 80px;
+    }
+    .single-coaching-feedback-box {
+        padding-left: 0;
+
+        p {
+            font-size: 18px;
+        }
+    }
+
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+    .single-coaching-feedback-box {
+        p {
+            font-size: 16px;
+        }
+        .client-info {
+            margin-top: 20px;
+        }
+    }
+
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1355px) {
+
+    .single-coaching-feedback-box {
+        p {
+            font-size: 18px;
+        }
+    }
+
+}
+
+@media only screen and (min-width: 1550px) {}

@@ -1,0 +1,117 @@
+<!-- This section for Online Art Demo -->
+<div
+    class="oa-features-area pt-100"
+    style="background-image: url(img/online-art/features/features-bg.jpg);"
+    [ngClass]="{'d-none': router.url === '/single-instructor'}"
+>
+    <div class="container">
+        <div class="section-title oa-title-color">
+            <span class="sub-title">EDUCATION FOR EVERYONE</span>
+            <h2>Artists Spend Time for Your Enjoyment</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+        <div class="row justify-content-center align-items-center">
+            <div class="col-lg-3 col-sm-6">
+                <div class="oa-features-card">
+                    <img src="img/online-art/features/img1.png" alt="icon">
+                    <h3>Latest Skills</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="oa-features-card">
+                    <img src="img/online-art/features/img2.png" alt="icon">
+                    <h3>Industry Experts</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="oa-features-card">
+                    <img src="img/online-art/features/img3.png" alt="icon">
+                    <h3>Online Courses</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="oa-features-card">
+                    <img src="img/online-art/features/img4.png" alt="icon">
+                    <h3>One to One</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+                </div>
+            </div>
+        </div>
+        <div class="oa-video-box">
+            <div class="image">
+                <div class="image">
+                    <img src="img/online-art/video/video.jpg" class="shadow" alt="video-image">
+                </div>
+                <div class="video-btn popup-youtube" (click)="openPopup()">
+                    <i class="flaticon-play"></i>
+                </div>
+            </div>
+            <div class="oa-video-shape-1" data-speed="0.06" data-revert="true">
+                <img src="img/online-art/video/shape1.png" alt="shape">
+            </div>
+            <div class="oa-video-shape-2" data-speed="0.06" data-revert="true">
+                <img src="img/online-art/video/shape2.png" alt="shape">
+            </div>
+            <div class="oa-video-shape-3" data-speed="0.06" data-revert="true">
+                <img src="img/online-art/video/shape3.png" alt="shape">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- This section for Single Instructor Demo -->
+<div
+    class="instructor-features-area pt-100 pb-70 d-none"
+    [ngClass]="{'d-block': router.url === '/single-instructor'}"
+>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-4 col-sm-6">
+                <div class="instructor-features-card">
+                    <div class="content">
+                        <div class="image-icon">
+                            <img src="img/instructor-home/features/img1.svg" alt="image">
+                        </div>
+                        <h3 class="el-messiri-font">Learn the Latest Top Skills</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <div class="instructor-features-card">
+                    <div class="content">
+                        <div class="image-icon">
+                            <img src="img/instructor-home/features/img2.svg" alt="image">
+                        </div>
+                        <h3 class="el-messiri-font">Learn in Your Own Pace</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <div class="instructor-features-card">
+                    <div class="content">
+                        <div class="image-icon">
+                            <img src="img/instructor-home/features/img3.svg" alt="image">
+                        </div>
+                        <h3 class="el-messiri-font">Learn From Industry Experts</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Video Popup -->
+<div
+    class="video-popup position-fixed d-flex align-items-center justify-content-center text-center top-0 start-0 end-0 bottom-0"
+    *ngIf="isOpen"
+>
+    <div class="popup-inner bg-white position-relative mx-auto">
+        <iframe src="https://www.youtube.com/embed/YDXQ_nociO4" title="Web Design Trends 2025" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <button (click)="closePopup()" type="button" class="close-btn p-0 border-0 d-flex align-items-center justify-content-center rounded-circle">
+            <i class='bx bx-x'></i>
+        </button>
+    </div>
+</div>

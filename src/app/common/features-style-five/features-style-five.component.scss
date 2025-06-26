@@ -1,0 +1,28 @@
+@use "../features-style-one/features-style-one.component.scss" as features;
+
+.kitchen-features-area {
+    background-color: #FFF8F8;
+
+    .section-title {
+        .sub-title {
+            color: var(--sparklingAppleColor);
+        }
+    }
+    .features-box {
+        transition: var(--transition);
+
+        h3, p, .icon {
+            transition: var(--transition);
+        }
+        .link-btn {
+            color: var(--sparklingAppleColor);
+        }
+        &:hover {
+            background-color: var(--sparklingAppleColor);
+
+            h3, p, .link-btn, .icon {
+                color: var(--whiteColor);
+            }
+        }
+    }
+}

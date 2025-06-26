@@ -1,0 +1,13 @@
+@use "../subscribe/subscribe.component.scss" as subscribe;
+
+.subscribe-area {
+    &.bg-eee8df {
+        .subscribe-content {
+            .newsletter-form {
+                .input-newsletter {
+                    background-color: var(--whiteColor);
+                }
+            }
+        }
+    }
+}

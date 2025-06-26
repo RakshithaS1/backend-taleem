@@ -1,0 +1,143 @@
+<div
+    class="feedback-area bg-fffaf3 ptb-100"
+    [ngClass]="{'d-none': router.url === '/single-instructor'}"
+>
+    <div class="container">
+        <div class="feedback-slides-two">
+            <owl-carousel-o [options]="feedbackSlides">
+                <ng-template carouselSlide>
+                    <div class="single-feedback-box">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum  ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed tempor incididunt ut labore et dolore.</p>
+                        <div class="client-info d-flex align-items-center">
+                            <img src="img/user1.jpg" class="rounded-circle" alt="image">
+                            <div class="title">
+                                <h3>John Smith</h3>
+                                <span>Python Developer</span>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <div class="single-feedback-box">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum  ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed tempor incididunt ut labore et dolore.</p>
+                        <div class="client-info d-flex align-items-center">
+                            <img src="img/user2.jpg" class="rounded-circle" alt="image">
+                            <div class="title">
+                                <h3>Sarah Taylor</h3>
+                                <span>PHP Developer</span>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <div class="single-feedback-box">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum  ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed tempor incididunt ut labore et dolore.</p>
+                        <div class="client-info d-flex align-items-center">
+                            <img src="img/user1.jpg" class="rounded-circle" alt="image">
+                            <div class="title">
+                                <h3>David Warner</h3>
+                                <span>QA Developer</span>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+            </owl-carousel-o>
+        </div>
+    </div>
+    <div class="divider2"></div>
+    <div class="divider3"></div>
+    <div class="shape2"><img src="img/shape2.png" alt="image"></div>
+    <div class="shape3"><img src="img/shape3.png" alt="image"></div>
+    <div class="shape4"><img src="img/shape4.png" alt="image"></div>
+    <div class="shape9"><img src="img/shape8.svg" alt="image"></div>
+</div>
+
+<!-- This section for Single Instructor Demo -->
+<div
+    class="instructor-feedback-area ptb-100 d-none"
+    [ngClass]="{'d-block': router.url === '/single-instructor'}"
+>
+    <div class="container">
+        <div class="section-title instructor-title-color">
+            <span class="sub-title">GO AT YOUR OWN PACE</span>
+            <h2 class="el-messiri-font">Learners Awesome Feedback</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+        <div class="instructor-feedback-slides">
+            <owl-carousel-o [options]="instructorFeedbackSlides">
+                <ng-template carouselSlide>
+                    <div class="instructor-single-feedback-item">
+                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+                        <div class="client-info d-flex align-items-center">
+                            <img src="img/user/user1.jpg" class="rounded-circle" alt="image">
+                            <div class="title">
+                                <h3>John Smith</h3>
+                                <span>Python Developer</span>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <div class="instructor-single-feedback-item">
+                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+                        <div class="client-info d-flex align-items-center">
+                            <img src="img/user/user2.jpg" class="rounded-circle" alt="image">
+                            <div class="title">
+                                <h3>Chris Evans</h3>
+                                <span>Python Expert</span>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <div class="instructor-single-feedback-item">
+                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+                        <div class="client-info d-flex align-items-center">
+                            <img src="img/user/user3.jpg" class="rounded-circle" alt="image">
+                            <div class="title">
+                                <h3>Scarlett Johansson</h3>
+                                <span>Photoshop Expert</span>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <div class="instructor-single-feedback-item">
+                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+                        <div class="client-info d-flex align-items-center">
+                            <img src="img/user/user1.jpg" class="rounded-circle" alt="image">
+                            <div class="title">
+                                <h3>John Smith</h3>
+                                <span>Python Developer</span>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <div class="instructor-single-feedback-item">
+                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+                        <div class="client-info d-flex align-items-center">
+                            <img src="img/user/user2.jpg" class="rounded-circle" alt="image">
+                            <div class="title">
+                                <h3>Chris Evans</h3>
+                                <span>Python Expert</span>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <div class="instructor-single-feedback-item">
+                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+                        <div class="client-info d-flex align-items-center">
+                            <img src="img/user/user3.jpg" class="rounded-circle" alt="image">
+                            <div class="title">
+                                <h3>Scarlett Johansson</h3>
+                                <span>Photoshop Expert</span>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+            </owl-carousel-o>
+        </div>
+    </div>
+</div>

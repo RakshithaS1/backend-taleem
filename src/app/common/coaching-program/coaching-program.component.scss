@@ -1,0 +1,204 @@
+.events-area {
+    z-index: 1;
+    position: relative;
+}
+.coaching-events-image {
+    text-align: center;
+    padding-left: 15px;
+
+    img {
+        border-radius: 5px;
+    }
+}
+.coaching-events-content {
+    padding-right: 15px;
+
+    .sub-title {
+        display: block;
+        text-transform: uppercase;
+        color: var(--mainColor);
+        margin-bottom: 10px;
+        font: {
+            size: 14px;
+            weight: 600;
+        };
+    }
+    h2 {
+        margin-bottom: 12px;
+        font: {
+            size: 36px;
+            weight: 700;
+        };
+    }
+}
+.single-coaching-events-box {
+    margin-top: 25px;
+    position: relative;
+    border-radius: 10px;
+    padding: 20px 140px 20px 25px;
+    background-color: var(--whiteColor);
+
+    .location {
+        font-weight: 600;
+        position: relative;
+        color: var(--mainColor);
+        margin-bottom: 11px;
+        display: block;
+    }
+    h3 {
+        margin-bottom: 15px;
+        font: {
+            size: 22px;
+            weight: 700;
+        };
+    }
+    .default-btn {
+        margin-top: 5px;
+        padding: {
+            top: 9px;
+            bottom: 9px;
+        };
+        i {
+            left: 28px;
+            top: 8px;
+        }
+    }
+    .date {
+        padding: 30px;
+        display: flex;
+        align-items: center;
+        background-color: #EFEFEF;
+        border-radius: 10px;
+        position: absolute;
+        height: 100%;
+        right: 0;
+        top: 0;
+
+        .div {
+            font-size: 42px;
+            line-height: 1.3;
+            color: var(--mainColor);
+
+            span {
+                display: block;
+                font-size: 22px;
+                color: var(--blackColor);
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 767px) {
+
+    .coaching-events-content {
+        padding-right: 0;
+        text-align: center;
+
+        .sub-title {
+            font-size: 12.5px;
+        }
+        h2 {
+            font-size: 23px;
+        }
+    }
+    .coaching-events-image {
+        margin-top: 30px;
+        padding-left: 0;
+    }
+    .single-coaching-events-box {
+        padding: 20px;
+
+        .location {
+            margin-bottom: 9px;
+        }
+        h3 {
+            font-size: 17px;
+            margin-bottom: 10px;
+        }
+        .date {
+            padding: 0;
+            display: block;
+            position: relative;
+            text-align: center;
+            background-color: transparent;
+            margin-top: 12px;
+            height: auto;
+
+            .div {
+                font: {
+                    size: 18px;
+                    weight: 600;
+                };
+                span {
+                    font-size: 18px;
+                    display: inline-block;
+                }
+            }
+        }
+    }
+
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .coaching-events-content {
+        padding-right: 0;
+        text-align: center;
+
+        h2 {
+            font-size: 30px;
+        }
+    }
+    .coaching-events-image {
+        padding-left: 0;
+        margin-top: 30px;
+    }
+    .single-coaching-events-box {
+        text-align: start;
+
+        h3 {
+            font-size: 19px;
+        }
+        .date {
+            .div {
+                font-size: 35px;
+
+                span {
+                    font-size: 19px;
+                }
+            }
+        }
+    }
+
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+    .coaching-events-content {
+        padding-right: 0;
+
+        h2 {
+            font-size: 30px;
+        }
+    }
+    .coaching-events-image {
+        padding-left: 0;
+    }
+    .single-coaching-events-box {
+        padding: 20px 105px 20px 25px;
+
+        h3 {
+            font-size: 20px;
+        }
+        .date {
+            padding: 20px;
+        }
+    }
+
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1355px) {}
+
+@media only screen and (min-width: 1550px) {}

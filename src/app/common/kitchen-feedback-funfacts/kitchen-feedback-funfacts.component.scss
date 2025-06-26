@@ -1,0 +1,105 @@
+@use "../funfacts-style-four/funfacts-style-four.component.scss" as funfacts;
+
+.kitchen-feedback-area {
+    background-color: #FFF8F8;
+    position: relative;
+    z-index: 1;
+
+    &::before {
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: -1;
+        content: '';
+        height: 160px;
+        position: absolute;
+        background-color: var(--whiteColor);
+    }
+    .funfacts-box {
+        h3 {
+            color: var(--sparklingAppleColor);
+        }
+    }
+}
+.single-kitchen-feedback-box {
+    z-index: 1;
+    position: relative;
+    padding: 70px 95px;
+    border-radius: 5px;
+    background-color: var(--sparklingAppleColor);
+
+    p {
+        color: var(--whiteColor);
+        line-height: 1.8;
+        margin-bottom: 0;
+        font-size: 20px;
+    }
+    .client-info {
+        margin-top: 25px;
+
+        img {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+        }
+        .title {
+            margin-left: 15px;
+
+            h3 {
+                color: var(--whiteColor);
+                margin-bottom: 0;
+                font: {
+                    size: 17px;
+                    weight: 700;
+                };
+            }
+            span {
+                color: var(--whiteColor);
+                display: block;
+                font-size: 14px;
+                margin-top: 10px;
+            }
+        }
+    }
+    &::before {
+        bottom: 30px;
+        opacity: .8;
+        right: 120px;
+        z-index: -1;
+        line-height: 1;
+        color: #64983B;
+        content: "\f10a";
+        font-size: 100px;
+        position: absolute;
+        font-family: Flaticon;
+    }
+}
+.kitchen-feedback-slides {
+    max-width: 1150px;
+    margin: {
+        left: auto;
+        right: auto;
+    };
+}
+
+@media only screen and (max-width: 767px) {
+
+    .single-kitchen-feedback-box {
+        padding: 20px 15px;
+
+        p {
+            font-size: 15px;
+        }
+    }
+
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {}
+
+@media only screen and (min-width: 1200px) and (max-width: 1355px) {}
+
+@media only screen and (min-width: 1550px) {}

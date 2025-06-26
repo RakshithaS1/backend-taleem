@@ -1,0 +1,535 @@
+<div class="courses-area bg-f5f7fa pt-100 pb-70">
+    <div class="container">
+        <div class="section-title">
+            <span class="sub-title">Go At Your Own Pace</span>
+            <h2>The World’s Largest Selection Of Courses</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+        <div class="courses-tabs">
+            <ul class="nav-tabset">
+                <li class="nav-tab" [ngClass]="{'active': currentTab === 'tab1'}">
+                    <span (click)="switchTab($event, 'tab1')">
+                        All
+                    </span>
+                </li>
+                <li class="nav-tab" [ngClass]="{'active': currentTab === 'tab2'}">
+                    <span (click)="switchTab($event, 'tab2')">
+                        Development
+                    </span>
+                </li>
+                <li class="nav-tab" [ngClass]="{'active': currentTab === 'tab3'}">
+                    <span (click)="switchTab($event, 'tab3')">
+                        Business
+                    </span>
+                </li>
+                <li class="nav-tab" [ngClass]="{'active': currentTab === 'tab4'}">
+                    <span (click)="switchTab($event, 'tab4')">
+                        IT & Software
+                    </span>
+                </li>
+                <li class="nav-tab" [ngClass]="{'active': currentTab === 'tab5'}">
+                    <span (click)="switchTab($event, 'tab5')">
+                        Animation
+                    </span>
+                </li>
+                <li class="nav-tab" [ngClass]="{'active': currentTab === 'tab6'}">
+                    <span (click)="switchTab($event, 'tab6')">
+                        Design
+                    </span>
+                </li>
+                <li class="nav-tab" [ngClass]="{'active': currentTab === 'tab7'}">
+                    <span (click)="switchTab($event, 'tab7')">
+                        Illustration
+                    </span>
+                </li>
+            </ul>
+            <div class="tabs-container">
+                <div class="pane" id="tab1" *ngIf="currentTab === 'tab1'">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-4 col-md-6">
+                            <div class="single-courses-item-box">
+                                <div class="courses-image">
+                                    <a routerLink="/single-course-2" class="d-block image">
+                                        <img src="img/courses/img12.jpg" alt="image">
+                                    </a>
+                                    <a routerLink="." class="fav"><i class="flaticon-heart"></i></a>
+                                    <div class="price shadow">$39</div>
+                                </div>
+                                <div class="courses-content">
+                                    <h3><a routerLink="/single-course-2">Agile Crash Course: Agile Project Management</a></h3>
+                                    <div class="rating">
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <div class="rating-total">
+                                            5.0 (1 rating)
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="single-courses-item-box">
+                                <div class="courses-image">
+                                    <a routerLink="/single-course-2" class="d-block image">
+                                        <img src="img/courses/img13.jpg" alt="image">
+                                    </a>
+                                    <a routerLink="." class="fav"><i class="flaticon-heart"></i></a>
+                                    <div class="price shadow">$59</div>
+                                </div>
+                                <div class="courses-content">
+                                    <h3><a routerLink="/single-course-2">Vue JS 2 - The Complete Guide (incl. Vue Router & Vuex)</a></h3>
+                                    <div class="rating">
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <div class="rating-total">
+                                            5.0 (2 rating)
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="single-courses-item-box">
+                                <div class="courses-image">
+                                    <a routerLink="/single-course-2" class="d-block image">
+                                        <img src="img/courses/img14.jpg" alt="image">
+                                    </a>
+                                    <a routerLink="." class="fav"><i class="flaticon-heart"></i></a>
+                                    <div class="price shadow">$69</div>
+                                </div>
+                                <div class="courses-content">
+                                    <h3><a routerLink="/single-course-2">The Python Bible™ | Everything You Need to Program in Python</a></h3>
+                                    <div class="rating">
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <div class="rating-total">
+                                            5.0 (3 rating)
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="single-courses-item-box">
+                                <div class="courses-image">
+                                    <a routerLink="/single-course-2" class="d-block image">
+                                        <img src="img/courses/img15.jpg" alt="image">
+                                    </a>
+                                    <a routerLink="." class="fav"><i class="flaticon-heart"></i></a>
+                                    <div class="price shadow">$79</div>
+                                </div>
+                                <div class="courses-content">
+                                    <h3><a routerLink="/single-course-2">Mathematical Foundation For Machine Learning and AI</a></h3>
+                                    <div class="rating">
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <div class="rating-total">
+                                            5.0 (4 rating)
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="single-courses-item-box">
+                                <div class="courses-image">
+                                    <a routerLink="/single-course-2" class="d-block image">
+                                        <img src="img/courses/img16.jpg" alt="image">
+                                    </a>
+                                    <a routerLink="." class="fav"><i class="flaticon-heart"></i></a>
+                                    <div class="price shadow">$89</div>
+                                </div>
+                                <div class="courses-content">
+                                    <h3><a routerLink="/single-course-2">The Ultimate Drawing Course - Beginner to Advanced</a></h3>
+                                    <div class="rating">
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <div class="rating-total">
+                                            5.0 (5 rating)
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="single-courses-item-box">
+                                <div class="courses-image">
+                                    <a routerLink="/single-course-2" class="d-block image">
+                                        <img src="img/courses/img17.jpg" alt="image">
+                                    </a>
+                                    <a routerLink="." class="fav"><i class="flaticon-heart"></i></a>
+                                    <div class="price shadow">$99</div>
+                                </div>
+                                <div class="courses-content">
+                                    <h3><a routerLink="/single-course-2">PyTorch: Deep Learning and Artificial Intelligence</a></h3>
+                                    <div class="rating">
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <div class="rating-total">
+                                            5.0 (6 rating)
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pane" id="tab2" *ngIf="currentTab === 'tab2'">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-4 col-md-6">
+                            <div class="single-courses-item-box">
+                                <div class="courses-image">
+                                    <a routerLink="/single-course-2" class="d-block image">
+                                        <img src="img/courses/img12.jpg" alt="image">
+                                    </a>
+                                    <a routerLink="." class="fav"><i class="flaticon-heart"></i></a>
+                                    <div class="price shadow">$39</div>
+                                </div>
+                                <div class="courses-content">
+                                    <h3><a routerLink="/single-course-2">Agile Crash Course: Agile Project Management</a></h3>
+                                    <div class="rating">
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <div class="rating-total">
+                                            5.0 (1 rating)
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="single-courses-item-box">
+                                <div class="courses-image">
+                                    <a routerLink="/single-course-2" class="d-block image">
+                                        <img src="img/courses/img14.jpg" alt="image">
+                                    </a>
+                                    <a routerLink="." class="fav"><i class="flaticon-heart"></i></a>
+                                    <div class="price shadow">$69</div>
+                                </div>
+                                <div class="courses-content">
+                                    <h3><a routerLink="/single-course-2">The Python Bible™ | Everything You Need to Program in Python</a></h3>
+                                    <div class="rating">
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <div class="rating-total">
+                                            5.0 (3 rating)
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pane" id="tab3" *ngIf="currentTab === 'tab3'">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-4 col-md-6">
+                            <div class="single-courses-item-box">
+                                <div class="courses-image">
+                                    <a routerLink="/single-course-2" class="d-block image">
+                                        <img src="img/courses/img12.jpg" alt="image">
+                                    </a>
+                                    <a routerLink="." class="fav"><i class="flaticon-heart"></i></a>
+                                    <div class="price shadow">$39</div>
+                                </div>
+                                <div class="courses-content">
+                                    <h3><a routerLink="/single-course-2">Agile Crash Course: Agile Project Management</a></h3>
+                                    <div class="rating">
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <div class="rating-total">
+                                            5.0 (1 rating)
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="single-courses-item-box">
+                                <div class="courses-image">
+                                    <a routerLink="/single-course-2" class="d-block image">
+                                        <img src="img/courses/img13.jpg" alt="image">
+                                    </a>
+                                    <a routerLink="." class="fav"><i class="flaticon-heart"></i></a>
+                                    <div class="price shadow">$59</div>
+                                </div>
+                                <div class="courses-content">
+                                    <h3><a routerLink="/single-course-2">Vue JS 2 - The Complete Guide (incl. Vue Router & Vuex)</a></h3>
+                                    <div class="rating">
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <div class="rating-total">
+                                            5.0 (2 rating)
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pane" id="tab4" *ngIf="currentTab === 'tab4'">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-4 col-md-6">
+                            <div class="single-courses-item-box">
+                                <div class="courses-image">
+                                    <a routerLink="/single-course-2" class="d-block image">
+                                        <img src="img/courses/img14.jpg" alt="image">
+                                    </a>
+                                    <a routerLink="." class="fav"><i class="flaticon-heart"></i></a>
+                                    <div class="price shadow">$69</div>
+                                </div>
+                                <div class="courses-content">
+                                    <h3><a routerLink="/single-course-2">The Python Bible™ | Everything You Need to Program in Python</a></h3>
+                                    <div class="rating">
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <div class="rating-total">
+                                            5.0 (3 rating)
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="single-courses-item-box">
+                                <div class="courses-image">
+                                    <a routerLink="/single-course-2" class="d-block image">
+                                        <img src="img/courses/img17.jpg" alt="image">
+                                    </a>
+                                    <a routerLink="." class="fav"><i class="flaticon-heart"></i></a>
+                                    <div class="price shadow">$99</div>
+                                </div>
+                                <div class="courses-content">
+                                    <h3><a routerLink="/single-course-2">PyTorch: Deep Learning and Artificial Intelligence</a></h3>
+                                    <div class="rating">
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <div class="rating-total">
+                                            5.0 (6 rating)
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pane" id="tab5" *ngIf="currentTab === 'tab5'">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-4 col-md-6">
+                            <div class="single-courses-item-box">
+                                <div class="courses-image">
+                                    <a routerLink="/single-course-2" class="d-block image">
+                                        <img src="img/courses/img13.jpg" alt="image">
+                                    </a>
+                                    <a routerLink="." class="fav"><i class="flaticon-heart"></i></a>
+                                    <div class="price shadow">$59</div>
+                                </div>
+                                <div class="courses-content">
+                                    <h3><a routerLink="/single-course-2">Vue JS 2 - The Complete Guide (incl. Vue Router & Vuex)</a></h3>
+                                    <div class="rating">
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <div class="rating-total">
+                                            5.0 (2 rating)
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="single-courses-item-box">
+                                <div class="courses-image">
+                                    <a routerLink="/single-course-2" class="d-block image">
+                                        <img src="img/courses/img15.jpg" alt="image">
+                                    </a>
+                                    <a routerLink="." class="fav"><i class="flaticon-heart"></i></a>
+                                    <div class="price shadow">$79</div>
+                                </div>
+                                <div class="courses-content">
+                                    <h3><a routerLink="/single-course-2">Mathematical Foundation For Machine Learning and AI</a></h3>
+                                    <div class="rating">
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <div class="rating-total">
+                                            5.0 (4 rating)
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pane" id="tab6" *ngIf="currentTab === 'tab6'">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-4 col-md-6">
+                            <div class="single-courses-item-box">
+                                <div class="courses-image">
+                                    <a routerLink="/single-course-2" class="d-block image">
+                                        <img src="img/courses/img15.jpg" alt="image">
+                                    </a>
+                                    <a routerLink="." class="fav"><i class="flaticon-heart"></i></a>
+                                    <div class="price shadow">$79</div>
+                                </div>
+                                <div class="courses-content">
+                                    <h3><a routerLink="/single-course-2">Mathematical Foundation For Machine Learning and AI</a></h3>
+                                    <div class="rating">
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <div class="rating-total">
+                                            5.0 (4 rating)
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="single-courses-item-box">
+                                <div class="courses-image">
+                                    <a routerLink="/single-course-2" class="d-block image">
+                                        <img src="img/courses/img16.jpg" alt="image">
+                                    </a>
+                                    <a routerLink="." class="fav"><i class="flaticon-heart"></i></a>
+                                    <div class="price shadow">$89</div>
+                                </div>
+                                <div class="courses-content">
+                                    <h3><a routerLink="/single-course-2">The Ultimate Drawing Course - Beginner to Advanced</a></h3>
+                                    <div class="rating">
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <div class="rating-total">
+                                            5.0 (5 rating)
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pane" id="tab7" *ngIf="currentTab === 'tab7'">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-4 col-md-6">
+                            <div class="single-courses-item-box">
+                                <div class="courses-image">
+                                    <a routerLink="/single-course-2" class="d-block image">
+                                        <img src="img/courses/img15.jpg" alt="image">
+                                    </a>
+                                    <a routerLink="." class="fav"><i class="flaticon-heart"></i></a>
+                                    <div class="price shadow">$79</div>
+                                </div>
+                                <div class="courses-content">
+                                    <h3><a routerLink="/single-course-2">Mathematical Foundation For Machine Learning and AI</a></h3>
+                                    <div class="rating">
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <div class="rating-total">
+                                            5.0 (4 rating)
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="single-courses-item-box">
+                                <div class="courses-image">
+                                    <a routerLink="/single-course-2" class="d-block image">
+                                        <img src="img/courses/img16.jpg" alt="image">
+                                    </a>
+                                    <a routerLink="." class="fav"><i class="flaticon-heart"></i></a>
+                                    <div class="price shadow">$89</div>
+                                </div>
+                                <div class="courses-content">
+                                    <h3><a routerLink="/single-course-2">The Ultimate Drawing Course - Beginner to Advanced</a></h3>
+                                    <div class="rating">
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <div class="rating-total">
+                                            5.0 (5 rating)
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="single-courses-item-box">
+                                <div class="courses-image">
+                                    <a routerLink="/single-course-2" class="d-block image">
+                                        <img src="img/courses/img17.jpg" alt="image">
+                                    </a>
+                                    <a routerLink="." class="fav"><i class="flaticon-heart"></i></a>
+                                    <div class="price shadow">$99</div>
+                                </div>
+                                <div class="courses-content">
+                                    <h3><a routerLink="/single-course-2">PyTorch: Deep Learning and Artificial Intelligence</a></h3>
+                                    <div class="rating">
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <div class="rating-total">
+                                            5.0 (6 rating)
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="shape16"><img src="img/shape15.png" alt="image"></div>
+</div>

@@ -1,0 +1,55 @@
+<!-- This section for Online Art Demo -->
+<div
+    class="oa-quote-area ptb-100"
+    [ngClass]="{'d-none': router.url === '/single-instructor'}"
+>
+    <div class="container">
+        <div class="oa-quote-inner-box">
+            <div class="row align-items-center">
+                <div class="col-lg-5 col-md-12">
+                    <div class="oa-quote-image">
+                        <img src="img/online-art/quote/quote.jpg" alt="quote-image">
+                    </div>
+                </div>
+                <div class="col-lg-7 col-md-12">
+                    <div class="oa-quote-content">
+                        <img src="img/online-art/quote/quotation.svg" alt="quotation">
+                        <p>The artist world is limitless. It can be found anywhere, far from where he lives or a few feet away. It is always on his doorstep.</p>
+                        <span>Paul Strand</span>
+                    </div>
+                </div>
+            </div>
+            <div class="quote-shape">
+                <img src="img/online-art/quote/shape.png" alt="shape">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- This section for Single Instructor Demo -->
+<div
+    class="instructor-quote-area ptb-100 d-none"
+    [ngClass]="{'d-block': router.url === '/single-instructor'}"
+>
+    <div class="container">
+        <div class="instructor-quote-inner-box">
+            <div class="row align-items-center">
+                <div class="col-lg-5 col-md-12">
+                    <div class="instructor-quote-image">
+                        <img src="img/instructor-home/quote/quote.png" alt="image">
+                    </div>
+                </div>
+                <div class="col-lg-7 col-md-12">
+                    <div class="instructor-quote-content">
+                        <img src="img/instructor-home/quote/quotation.svg" alt="image">
+                        <p>The dream begins, most of the time, with a teacher who believes in you, who tugs and pushes and leads you on to the next plateau, sometimes poking you with a sharp stick called truth.</p>
+                        <span>Dan Rather</span>
+                    </div>
+                </div>
+            </div>
+            <div class="quote-shape">
+                <img src="img/instructor-home/quote/shape.png" alt="image">
+            </div>
+        </div>
+    </div>
+</div>

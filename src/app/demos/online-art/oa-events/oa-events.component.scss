@@ -1,0 +1,182 @@
+.oa-events-box {
+    margin-bottom: 30px;
+    position: relative;
+
+    .events-image {
+        border-radius: 8px 8px 0 0;
+        overflow: hidden;
+
+        a {
+            border-radius: 8px 8px 0 0;
+            overflow: hidden;
+
+            img {
+                border-radius: 8px 8px 0 0;
+                transition: var(--transition);
+                width: 100%;
+            }
+        }
+    }
+    .events-content {
+        background-color: #F9FAFE;
+        padding: 25px;
+        border-radius: 0 0 8px 8px;
+
+        .category {
+            display: inline-block;
+            margin-bottom: 12px;
+            color: #037F99;
+            text-transform: uppercase;
+            font: {
+                size: 14px;
+                weight: 700;
+            };
+            &:hover {
+                color: var(--mainColor);
+            }
+        }
+        h3 {
+            margin-bottom: 12px;
+            line-height: 1.4;
+            font: {
+                size: 24px;
+                weight: 800;
+            };
+            a {
+                display: inline-block;
+
+                &:hover {
+                    color: #037F99;
+                }
+            }
+        }
+        .events-content-footer {
+            list-style-type: none;
+            padding-left: 0;
+            margin: {
+                bottom: 0;
+                left: -7px;
+                right: -7px;
+                top: 18px;
+            };
+            li {
+                color: var(--optionalColor);
+                font-size: 15px;
+                position: relative;
+                font-weight: 500;
+                padding: {
+                    left: 35px;
+                    right: 10px;
+                };
+                i {
+                    color: #037F99;
+                    position: absolute;
+                    left: 10px;
+                    top: 0;
+                }
+                &:last-child {
+                    i {
+                        top: 2.8px;
+                        left: 15px;
+                    }
+                }
+            }
+        }
+    }
+    &:hover {
+        .events-image {
+            a {
+                img {
+                    transform: rotate(5deg) scale(1.3);
+                }
+            }
+        }
+    }
+}
+.oa-events-info {
+    text-align: center;
+
+    p {
+        a {
+            color: #06839C;
+            font-weight: 600;
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .oa-events-box {
+        .events-content {
+            padding: 15px;
+
+            .category {
+                font-size: 12px;
+            }
+            h3 {
+                margin-bottom: 8px;
+                font-size: 20px;
+            }
+            .events-content-footer {
+                li {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {
+
+    .oa-events-box {
+        .events-content {
+            padding: 15px;
+
+            .category {
+                font-size: 12px;
+            }
+            h3 {
+                margin-bottom: 8px;
+                font-size: 20px;
+            }
+            .events-content-footer {
+                li {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {
+
+    .oa-events-box {
+        .events-content {
+            padding: 15px;
+
+            h3 {
+                font-size: 20px;
+            }
+            .events-content-footer {
+                li {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

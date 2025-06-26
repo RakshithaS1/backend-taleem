@@ -1,0 +1,7 @@
+@use "../testimonials/testimonials.component.scss" as testimonials;
+
+.d-none {
+    &.d-block {
+        display: block !important;
+    }
+}

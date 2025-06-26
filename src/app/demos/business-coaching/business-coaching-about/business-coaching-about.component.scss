@@ -1,0 +1,143 @@
+.about-me-inner {
+    background-color: var(--mainColor);
+    border-radius: 20px;
+    padding: 30px;
+}
+.about-me-image {
+    text-align: center;
+    border-radius: 20px;
+    padding-right: 10px;
+
+    img {
+        border-radius: 20px;
+    }
+}
+.about-me-content {
+    padding: {
+        left: 10px;
+        right: 30px;
+    };
+    .sub-title {
+        text-transform: uppercase;
+        color: var(--whiteColor);
+        margin-bottom: 10px;
+        display: block;
+        font: {
+            size: 14px;
+            weight: 600;
+        };
+    }
+    h2 {
+        margin-bottom: 15px;
+        color: var(--whiteColor);
+        font: {
+            size: 36px;
+            weight: 700;
+        };
+    }
+    p {
+        color: var(--whiteColor);
+    }
+    .quote {
+        padding: 20px;
+        margin-top: 25px;
+        border-radius: 10px;
+        color: var(--whiteColor);
+        background-color: rgba(0, 0, 0, .10);
+        font: {
+            size: 20px;
+            weight: 600;
+        };
+    }
+    .default-btn {
+        margin-top: 25px;
+        background-color: var(--blackColor);
+
+        span {
+            background-color: var(--whiteColor);
+        }
+        &:hover {
+            color: var(--blackColor);
+        }
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    
+    .about-me-inner {
+        padding: 20px;
+    }
+    .about-me-image {
+        margin-bottom: 30px;
+        padding-right: 0;
+    }
+    .about-me-content {
+        text-align: center;
+        padding: {
+            left: 0;
+            right: 0;
+        };
+        .sub-title {
+            font-size: 12.5px;
+        }
+        h2 {
+            font-size: 23px;
+        }
+        .quote {
+            padding: 15px;
+            font-size: 14px;
+        }
+        .default-btn {
+            margin-top: 20px;
+        }
+    }
+
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .about-me-image {
+        padding-right: 0;
+        margin-bottom: 30px;
+    }
+    .about-me-content {
+        padding: {
+            left: 0;
+            right: 0;
+        };
+        h2 {
+            font-size: 30px;
+        }
+        .quote {
+            font-size: 17px;
+        }
+    }
+
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+    .about-me-image {
+        padding-right: 0;
+    }
+    .about-me-content {
+        padding: {
+            left: 0;
+            right: 0;
+        };
+        h2 {
+            font-size: 30px;
+        }
+        .quote {
+            padding: 15px;
+            font-size: 18px;
+        }
+    }
+
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1355px) {}
+
+@media only screen and (min-width: 1550px) {}

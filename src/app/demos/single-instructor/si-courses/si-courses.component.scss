@@ -1,0 +1,32 @@
+@use "../../../common/courses/courses.component.scss" as courses;
+
+.instructor-courses {
+    .single-courses-box {
+        .courses-image {
+            .price {
+                background-color: #FD8503;
+            }
+        }
+        .courses-content {
+            .course-author {
+                span {
+                    color: #FD8503;
+                }
+            }
+            .courses-box-footer {
+                li {
+                    i {
+                        color: #FD8503;
+                    }
+                }
+            }
+        }
+    }
+    .courses-info {
+        p {
+            a {
+                color: #FD8503;
+            }
+        }
+    }
+}

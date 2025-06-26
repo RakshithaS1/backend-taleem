@@ -1,0 +1,23 @@
+@use "../subscribe/subscribe.component.scss" as subscribe;
+
+.motivation-subscribe-area {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+
+    .subscribe-content {
+        .sub-title {
+            margin-bottom: 18px;
+        }
+        p {
+            margin-top: 20px;
+        }
+        .newsletter-form {
+            .input-newsletter {
+                background-color: var(--whiteColor);
+                border: 1px solid #DFDFDF;
+                color: var(--blackColor);
+            }
+        }
+    }
+}
