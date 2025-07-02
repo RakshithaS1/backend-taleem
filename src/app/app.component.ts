@@ -14,7 +14,7 @@ import { BackToTopComponent } from './common/back-to-top/back-to-top.component';
 export class AppComponent {
 
     location: any;
-    title = 'Odemy - Angular 19 Online Courses & Education Template';
+    title = 'Junub Academy - Online Courses & Education Platform';
 
     constructor(
         public router: Router,
