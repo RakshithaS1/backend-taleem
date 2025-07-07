@@ -4,9 +4,9 @@
             <ul>
                 <li><a routerLink="/">Home</a></li>
                 <li><a routerLink=".">Development</a></li>
-                <li>Python for Finance: Investment Fundamentals & Data Analytics</li>
+                <li>{{ subCourseDetails?.title || 'Course Details' }}</li>
             </ul>
-            <h2>Python for Finance: Investment Fundamentals & Data Analytics</h2>
+            <h2>{{ subCourseDetails?.title || 'Course Details' }}</h2>
             <div class="rating">
                 <i class='bx bxs-star'></i>
                 <i class='bx bxs-star'></i>
@@ -22,9 +22,12 @@
     <div class="shape9"><img src="img/shape8.svg" alt="image"></div>
 </div>
 
-<div class="courses-details-area pb-100">
+<div *ngIf="loading" class="text-center my-5">
+    <span>Loading course details...</span>
+</div>
+<div *ngIf="!loading && subCourseDetails" class="courses-details-area pb-100">
     <div class="courses-details-image">
-        <img src="img/courses/course-details.jpg" alt="image">
+        <img [src]="subCourseDetails?.image || 'img/courses/course-details.jpg'" alt="image">
     </div>
     <div class="container">
         <div class="row">
@@ -53,255 +56,60 @@
                         </li>
                     </ul>
                     <div class="tabs-container">
+                        <!-- Overview Tab -->
                         <div class="pane" id="tab1" *ngIf="currentTab === 'tab1'">
                             <div class="courses-overview">
-                                <h3>Course Description</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
-                                <h3>Certification</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
-                                <h3>Who this course is for</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
+                                <h3>Course Overview</h3>
+                                <div [innerHTML]="subCourseDetails?.overview"></div>
                             </div>
                         </div>
+                        <!-- Curriculum Tab -->
                         <div class="pane" id="tab2" *ngIf="currentTab === 'tab2'">
                             <div class="courses-curriculum">
-                                <h3>Python Introduction</h3>
-                                <ul>
-                                    <li><a href="https://www.youtube.com/watch?v=PWvPbGWVRrU" class="popup-youtube d-flex justify-content-between align-items-center">
-                                        <span class="courses-name">Python Introduction</span>
-                                        <div class="courses-meta">
-                                            <span class="questions">5 questions</span>
-                                            <span class="duration">01 Hour</span>
-                                            <span class="status">Preview</span>
-                                        </div>
-                                    </a></li>
+                                <h3>Curriculum</h3>
+                                <ul *ngIf="subCourseDetails?.curriculum?.length; else noCurriculum">
+                                    <li *ngFor="let lesson of subCourseDetails.curriculum">
+                                        <strong>{{ lesson.title }}</strong>
+                                        <span *ngIf="lesson.duration"> - {{ lesson.duration }}</span>
+                                        <button *ngIf="lesson.previewUrl" (click)="openPreview(lesson.previewUrl)">Preview</button>
+                                    </li>
                                 </ul>
-                                <h3>Stepping into the World of Python</h3>
-                                <ul>
-                                    <li><a href="https://www.youtube.com/watch?v=PWvPbGWVRrU" class="locked popup-youtube d-flex justify-content-between align-items-center">
-                                        <span class="courses-name">NumPy Introduction</span>
-                                        <div class="courses-meta">
-                                            <span class="duration">15 Min</span>
-                                            <span class="status locked"><i class="flaticon-password"></i></span>
-                                        </div>
-                                    </a></li>
-                                    <li><a href="https://www.youtube.com/watch?v=PWvPbGWVRrU" class="locked popup-youtube d-flex justify-content-between align-items-center">
-                                        <span class="courses-name">NumPy Getting Started</span>
-                                        <div class="courses-meta">
-                                            <span class="duration">30 Min</span>
-                                            <span class="status locked"><i class="flaticon-password"></i></span>
-                                        </div>
-                                    </a></li>
-                                    <li><a href="https://www.youtube.com/watch?v=PWvPbGWVRrU" class="locked popup-youtube d-flex justify-content-between align-items-center">
-                                        <span class="courses-name">NumPy Creating Arrays</span>
-                                        <div class="courses-meta">
-                                            <span class="duration">45 Min</span>
-                                            <span class="status locked"><i class="flaticon-password"></i></span>
-                                        </div>
-                                    </a></li>
-                                    <li><a href="https://www.youtube.com/watch?v=PWvPbGWVRrU" class="locked popup-youtube d-flex justify-content-between align-items-center">
-                                        <span class="courses-name">NumPy Array Indexing</span>
-                                        <div class="courses-meta">
-                                            <span class="questions">4 questions</span>
-                                            <span class="duration">1 Hour</span>
-                                            <span class="status locked"><i class="flaticon-password"></i></span>
-                                        </div>
-                                    </a></li>
-                                    <li><a href="https://www.youtube.com/watch?v=PWvPbGWVRrU" class="locked popup-youtube d-flex justify-content-between align-items-center">
-                                        <span class="courses-name">NumPy Array Slicing</span>
-                                        <div class="courses-meta">
-                                            <span class="duration">1.5 Hour</span>
-                                            <span class="status locked"><i class="flaticon-password"></i></span>
-                                        </div>
-                                    </a></li>
-                                </ul>
-                                <h3>Python MySQL</h3>
-                                <ul>
-                                    <li><a href="https://www.youtube.com/watch?v=PWvPbGWVRrU" class="locked popup-youtube d-flex justify-content-between align-items-center">
-                                        <span class="courses-name">Python MySQL</span>
-                                        <div class="courses-meta">
-                                            <span class="duration">01 Hour</span>
-                                            <span class="status locked"><i class="flaticon-password"></i></span>
-                                        </div>
-                                    </a></li>
-                                    <li><a href="https://www.youtube.com/watch?v=PWvPbGWVRrU" class="locked popup-youtube d-flex justify-content-between align-items-center">
-                                        <span class="courses-name">Python MySQL Create Database</span>
-                                        <div class="courses-meta">
-                                            <span class="questions">3 questions</span>
-                                            <span class="duration">1.1 Hour</span>
-                                            <span class="status locked"><i class="flaticon-password"></i></span>
-                                        </div>
-                                    </a></li>
-                                    <li><a href="https://www.youtube.com/watch?v=PWvPbGWVRrU" class="locked popup-youtube d-flex justify-content-between align-items-center">
-                                        <span class="courses-name">Python MySQL Create Table</span>
-                                        <div class="courses-meta">
-                                            <span class="duration">1.5 Hour</span>
-                                            <span class="status locked"><i class="flaticon-password"></i></span>
-                                        </div>
-                                    </a></li>
-                                </ul>
+                                <ng-template #noCurriculum>No curriculum available.</ng-template>
                             </div>
                         </div>
-                        <div class="pane" id="tab3" *ngIf="currentTab === 'tab3'">
+                        <!-- Instructor Tab -->
+                        <div class="pane" id="tab3" *ngIf="currentTab === 'tab3' && subCourseDetails?.instructor">
                             <div class="courses-instructor">
                                 <div class="single-advisor-box">
                                     <div class="row align-items-center">
                                         <div class="col-lg-4 col-md-4">
                                             <div class="advisor-image">
-                                                <img src="img/advisor/img2.jpg" alt="image">
+                                                <img *ngIf="subCourseDetails.instructor.image" [src]="subCourseDetails.instructor.image" alt="Instructor" />
                                             </div>
                                         </div>
                                         <div class="col-lg-8 col-md-8">
                                             <div class="advisor-content">
-                                                <h3>Sarah Taylor</h3>
-                                                <span class="sub-title">Agile Project Expert</span>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                                <ul class="social-link">
-                                                    <li><a href="#" class="d-block" target="_blank"><i class='bx bxl-facebook'></i></a></li>
-                                                    <li><a href="#" class="d-block" target="_blank"><i class='bx bxl-twitter'></i></a></li>
-                                                    <li><a href="#" class="d-block" target="_blank"><i class='bx bxl-instagram'></i></a></li>
-                                                    <li><a href="#" class="d-block" target="_blank"><i class='bx bxl-linkedin'></i></a></li>
-                                                </ul>
+                                                <h3>{{ subCourseDetails.instructor.name }}</h3>
+                                                <span class="sub-title">{{ subCourseDetails.instructor.bio }}</span>
+                                                <div *ngIf="subCourseDetails.instructor.socialLinks">
+                                                    <a *ngFor="let link of subCourseDetails.instructor.socialLinks" [href]="link.url" target="_blank">{{ link.platform }}</a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <!-- Reviews Tab -->
                         <div class="pane" id="tab4" *ngIf="currentTab === 'tab4'">
                             <div class="courses-reviews">
-                                <h3>Course Rating</h3>
-                                <div class="rating">
-                                    <span class="bx bxs-star checked"></span>
-                                    <span class="bx bxs-star checked"></span>
-                                    <span class="bx bxs-star checked"></span>
-                                    <span class="bx bxs-star checked"></span>
-                                    <span class="bx bxs-star"></span>
-                                </div>
-                                <div class="rating-count">
-                                    <span>4.1 average based on 4 reviews.</span>
-                                </div>
-                                <div class="row">
-                                    <div class="side">
-                                        <div>5 star</div>
-                                    </div>
-                                    <div class="middle">
-                                        <div class="bar-container">
-                                            <div class="bar-5"></div>
-                                        </div>
-                                    </div>
-                                    <div class="side right">
-                                        <div>02</div>
-                                    </div>
-                                    <div class="side">
-                                        <div>4 star</div>
-                                    </div>
-                                    <div class="middle">
-                                        <div class="bar-container">
-                                            <div class="bar-4"></div>
-                                        </div>
-                                    </div>
-                                    <div class="side right">
-                                        <div>03</div>
-                                    </div>
-                                    <div class="side">
-                                        <div>3 star</div>
-                                    </div>
-                                    <div class="middle">
-                                        <div class="bar-container">
-                                            <div class="bar-3"></div>
-                                        </div>
-                                    </div>
-                                    <div class="side right">
-                                        <div>04</div>
-                                    </div>
-                                    <div class="side">
-                                        <div>2 star</div>
-                                    </div>
-                                    <div class="middle">
-                                        <div class="bar-container">
-                                            <div class="bar-2"></div>
-                                        </div>
-                                    </div>
-                                    <div class="side right">
-                                        <div>05</div>
-                                    </div>
-                                    <div class="side">
-                                        <div>1 star</div>
-                                    </div>
-                                    <div class="middle">
-                                        <div class="bar-container">
-                                            <div class="bar-1"></div>
-                                        </div>
-                                    </div>
-                                    <div class="side right">
-                                        <div>00</div>
+                                <h3>Reviews</h3>
+                                <div *ngIf="subCourseDetails?.reviews?.length; else noReviews">
+                                    <div *ngFor="let review of subCourseDetails.reviews">
+                                        <strong>{{ review.user }}</strong>: {{ review.comment }} ({{ review.rating }}/5)
                                     </div>
                                 </div>
-                            </div>
-                            <div class="courses-review-comments">
-                                <h3>3 Reviews</h3>
-                                <div class="user-review">
-                                    <img src="img/user1.jpg" alt="image">
-                                    <div class="review-rating">
-                                        <div class="review-stars">
-                                            <i class='bx bxs-star checked'></i>
-                                            <i class='bx bxs-star checked'></i>
-                                            <i class='bx bxs-star checked'></i>
-                                            <i class='bx bxs-star checked'></i>
-                                            <i class='bx bxs-star checked'></i>
-                                        </div>
-                                        <span class="d-inline-block">James Anderson</span>
-                                    </div>
-                                    <span class="d-block sub-comment">Excellent</span>
-                                    <p>Very well built theme, couldn't be happier with it. Can't wait for future updates to see what else they add in.</p>
-                                </div>
-                                <div class="user-review">
-                                    <img src="img/user2.jpg" alt="image">
-                                    <div class="review-rating">
-                                        <div class="review-stars">
-                                            <i class='bx bxs-star checked'></i>
-                                            <i class='bx bxs-star checked'></i>
-                                            <i class='bx bxs-star checked'></i>
-                                            <i class='bx bxs-star'></i>
-                                            <i class='bx bxs-star'></i>
-                                        </div>
-                                        <span class="d-inline-block">Sarah Taylor</span>
-                                    </div>
-                                    <span class="d-block sub-comment">Video Quality!</span>
-                                    <p>Was really easy to implement and they quickly answer my additional questions!</p>
-                                </div>
-                                <div class="user-review">
-                                    <img src="img/user3.jpg" alt="image">
-                                    <div class="review-rating">
-                                        <div class="review-stars">
-                                            <i class='bx bxs-star checked'></i>
-                                            <i class='bx bxs-star checked'></i>
-                                            <i class='bx bxs-star checked'></i>
-                                            <i class='bx bxs-star checked'></i>
-                                            <i class='bx bxs-star checked'></i>
-                                        </div>
-                                        <span class="d-inline-block">David Warner</span>
-                                    </div>
-                                    <span class="d-block sub-comment">Perfect Coding!</span>
-                                    <p>Stunning design, very dedicated crew who welcome new ideas suggested by customers, nice support.</p>
-                                </div>
-                                <div class="user-review">
-                                    <img src="img/user4.jpg" alt="image">
-                                    <div class="review-rating">
-                                        <div class="review-stars">
-                                            <i class='bx bxs-star checked'></i>
-                                            <i class='bx bxs-star checked'></i>
-                                            <i class='bx bxs-star checked'></i>
-                                            <i class='bx bxs-star checked'></i>
-                                            <i class='bx bxs-star'></i>
-                                        </div>
-                                        <span class="d-inline-block">King Kong</span>
-                                    </div>
-                                    <span class="d-block sub-comment">Perfect Video!</span>
-                                    <p>Stunning design, very dedicated crew who welcome new ideas suggested by customers, nice support.</p>
-                                </div>
+                                <ng-template #noReviews>No reviews yet.</ng-template>
                             </div>
                         </div>
                     </div>
@@ -310,7 +118,7 @@
             <div class="col-lg-4 col-md-12">
                 <div class="courses-details-info">
                     <div class="image">
-                        <img src="img/courses/img1.jpg" alt="image">
+                        <img [src]="subCourseDetails?.image || 'img/courses/img1.jpg'" alt="image">
                         <div class="content" (click)="openPopup()">
                             <i class="flaticon-play"></i>
                             <span>Course Preview</span>
@@ -320,37 +128,37 @@
                         <li class="price">
                             <div class="d-flex justify-content-between align-items-center">
                                 <span><i class="flaticon-tag"></i> Price</span>
-                                $49
+                                {{ subCourseDetails?.price }} SSP
                             </div>
                         </li>
-                        <li>
+                        <li *ngIf="subCourseDetails?.instructor">
                             <div class="d-flex justify-content-between align-items-center">
                                 <span><i class="flaticon-teacher"></i> Instructor</span>
-                                Sarah Taylor
+                                {{ subCourseDetails?.instructor.name }}
                             </div>
                         </li>
-                        <li>
+                        <li *ngIf="subCourseDetails?.duration">
                             <div class="d-flex justify-content-between align-items-center">
                                 <span><i class="flaticon-time"></i> Duration</span>
-                                7 weeks
+                                {{ subCourseDetails?.duration }}
                             </div>
                         </li>
-                        <li>
+                        <li *ngIf="subCourseDetails?.lessons">
                             <div class="d-flex justify-content-between align-items-center">
                                 <span><i class="flaticon-distance-learning"></i> Lessons</span>
-                                25
+                                {{ subCourseDetails?.lessons }}
                             </div>
                         </li>
-                        <li>
+                        <li *ngIf="subCourseDetails?.enrolled">
                             <div class="d-flex justify-content-between align-items-center">
                                 <span><i class="flaticon-web"></i> Enrolled</span>
-                                255 students
+                                {{ subCourseDetails?.enrolled }} students
                             </div>
                         </li>
-                        <li>
+                        <li *ngIf="subCourseDetails?.access">
                             <div class="d-flex justify-content-between align-items-center">
                                 <span><i class="flaticon-lock"></i> Access</span>
-                                Lifetime
+                                {{ subCourseDetails?.access }}
                             </div>
                         </li>
                     </ul>

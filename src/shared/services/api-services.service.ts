@@ -55,4 +55,23 @@ export class ApiServices {
       return of(result as T);
     };
   }
+
+  // Fetch all main courses
+  getMainCourses(): Observable<any> {
+    return this.get('main-courses');
+  }
+
+  // Fetch subcourses for a main course
+  getSubCourses(mainCourseId: string): Observable<any> {
+    return this.get(`sub-courses?mainCourseId=${mainCourseId}`);
+  }
+
+  // Fetch course details by id
+  getCourseDetailsById(id: string): Observable<any> {
+    return this.get(`course-details/${id}`);
+  }
+
+  getSubCourseDetails(courseId: string) {
+    return this.get(`subcourse-details/${courseId}`);
+  }
 }

@@ -118,7 +118,6 @@ export const routes: Routes = [
     {path: 'single-blog-2', component: BlogDetailsStyleTwoComponent},
     {path: 'single-blog-3', component: BlogDetailsStyleThreeComponent},
     {path: 'contact', component: ContactUsComponent},
-    // Here add new pages component
-
+    {path: 'course-details-style-one/:id', component: CourseDetailsStyleOneComponent},
     {path: '**', component: ErrorComponent}, // This line will remain down from the whole pages component list
 ];
