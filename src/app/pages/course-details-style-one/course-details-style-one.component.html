@@ -3,45 +3,64 @@
         <div class="page-title-content">
             <ul>
                 <li><a routerLink="/">Home</a></li>
-                <li><a routerLink=".">Development</a></li>
-                <li>{{ subCourseDetails?.title || 'Course Details' }}</li>
+                <li><a routerLink=".">Courses</a></li>
+                <li>{{course?.title}}</li>
             </ul>
-            <h2>{{ subCourseDetails?.title || 'Course Details' }}</h2>
+            <h2 style="margin-bottom: 0;">{{course?.title}}</h2>
+            <div class="course-status mb-3" *ngIf="course?.isFree || course?.isPremium">
+                <span *ngIf="course?.isFree" class="badge bg-success fs-6">FREE COURSE</span>
+                <span *ngIf="course?.isPremium" class="badge bg-warning fs-6">PREMIUM COURSE</span>
+            </div>
             <div class="rating">
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
+                <ng-container *ngFor="let star of [1, 2, 3, 4, 5]; let i = index">
+                    <i class='bx' [ngClass]="averageRating >= star ? 'bxs-star' : 'bx-star'"></i>
+                </ng-container>
                 <div class="rating-count">
-                    <span>4.0 (1 rating)</span>
+                    <span>{{averageRating | number:'1.1-1'}} ({{course?.reviews?.length || 0}} reviews)</span>
                 </div>
             </div>
         </div>
     </div>
-    <div class="shape9"><img src="img/shape8.svg" alt="image"></div>
+    <div class="shape9">
+        <!-- <img [src]="courseDetails.banner_img" alt="image"> -->
+    </div>
 </div>
 
-<div *ngIf="loading" class="text-center my-5">
-    <span>Loading course details...</span>
-</div>
-<div *ngIf="!loading && subCourseDetails" class="courses-details-area pb-100">
-    <div class="courses-details-image">
-        <img [src]="subCourseDetails?.image || 'img/courses/course-details.jpg'" alt="image">
-    </div>
+<div class="courses-details-area" style="margin-top: 0 !important; padding-top: 0 !important;">
     <div class="container">
-        <div class="row">
+        <!-- Loading State -->
+        <div *ngIf="loading" class="text-center py-5">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <p class="mt-3">Loading course details...</p>
+        </div>
+
+        <!-- Error State -->
+        <div *ngIf="error && !loading" class="text-center py-5">
+            <div class="alert alert-danger" role="alert">
+                <h4>Error Loading Course</h4>
+                <p>{{ error }}</p>
+                <button class="btn btn-primary" (click)="ngOnInit()">Try Again</button>
+            </div>
+        </div>
+
+        <!-- Course Content -->
+        <div class="row" *ngIf="!loading && !error">
             <div class="col-lg-8 col-md-12">
+                <div class="courses-details-image">
+                    <img src="img\image.png" alt="Course Image" style="width:100%; height:auto; object-fit:contain;margin-top: 0 !important; padding-top: 0 !important;" />
+                </div>
                 <div class="courses-details-desc">
                     <ul class="nav-tabset">
                         <li class="nav-tab" [ngClass]="{'active': currentTab === 'tab1'}">
                             <span (click)="switchTab($event, 'tab1')">
-                                Overview
+                                Curriculum
                             </span>
                         </li>
                         <li class="nav-tab" [ngClass]="{'active': currentTab === 'tab2'}">
                             <span (click)="switchTab($event, 'tab2')">
-                                Curriculum
+                                Overview
                             </span>
                         </li>
                         <li class="nav-tab" [ngClass]="{'active': currentTab === 'tab3'}">
@@ -50,227 +69,167 @@
                             </span>
                         </li>
                         <li class="nav-tab" [ngClass]="{'active': currentTab === 'tab4'}">
+                            
                             <span (click)="switchTab($event, 'tab4')">
                                 Reviews
                             </span>
                         </li>
                     </ul>
                     <div class="tabs-container">
-                        <!-- Overview Tab -->
-                        <div class="pane" id="tab1" *ngIf="currentTab === 'tab1'">
+                        <div class="pane" id="tab2" *ngIf="currentTab === 'tab2'">
                             <div class="courses-overview">
-                                <h3>Course Overview</h3>
-                                <div [innerHTML]="subCourseDetails?.overview"></div>
+                                <h3>Course Description</h3>
+                                <div [innerHTML]="course.description"></div>
                             </div>
                         </div>
-                        <!-- Curriculum Tab -->
-                        <div class="pane" id="tab2" *ngIf="currentTab === 'tab2'">
+                        <div class="pane" id="tab1" *ngIf="currentTab === 'tab1'">
                             <div class="courses-curriculum">
                                 <h3>Curriculum</h3>
-                                <ul *ngIf="subCourseDetails?.curriculum?.length; else noCurriculum">
-                                    <li *ngFor="let lesson of subCourseDetails.curriculum">
-                                        <strong>{{ lesson.title }}</strong>
-                                        <span *ngIf="lesson.duration"> - {{ lesson.duration }}</span>
-                                        <button *ngIf="lesson.previewUrl" (click)="openPreview(lesson.previewUrl)">Preview</button>
+                                <ul *ngIf="course.SubjectMaster?.length; else noCurriculum">
+                                    <li *ngFor="let subject of course.SubjectMaster">
+                                        <strong>{{ subject.title }}</strong> - {{ subject.description }}<br>
+                                        <span>Start: {{ subject.startDate | date }}</span> - 
+                                        <span>End: {{ subject.endDate | date }}</span>
                                     </li>
                                 </ul>
                                 <ng-template #noCurriculum>No curriculum available.</ng-template>
                             </div>
                         </div>
-                        <!-- Instructor Tab -->
-                        <div class="pane" id="tab3" *ngIf="currentTab === 'tab3' && subCourseDetails?.instructor">
-                            <div class="courses-instructor">
+                        <div class="pane" id="tab3" *ngIf="currentTab === 'tab3'">
+                            <div class="courses-instructor" *ngIf="course.instructor">
                                 <div class="single-advisor-box">
                                     <div class="row align-items-center">
                                         <div class="col-lg-4 col-md-4">
                                             <div class="advisor-image">
-                                                <img *ngIf="subCourseDetails.instructor.image" [src]="subCourseDetails.instructor.image" alt="Instructor" />
+                                                <img src="img\image.png" alt="Instructor" />
                                             </div>
                                         </div>
                                         <div class="col-lg-8 col-md-8">
                                             <div class="advisor-content">
-                                                <h3>{{ subCourseDetails.instructor.name }}</h3>
-                                                <span class="sub-title">{{ subCourseDetails.instructor.bio }}</span>
-                                                <div *ngIf="subCourseDetails.instructor.socialLinks">
-                                                    <a *ngFor="let link of subCourseDetails.instructor.socialLinks" [href]="link.url" target="_blank">{{ link.platform }}</a>
-                                                </div>
+                                                <h3>{{course.instructor.name}}</h3>
+                                                <p *ngIf="course.instructor.bio">{{course.instructor.bio}}</p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <div *ngIf="!course.instructor" class="no-instructor">
+                                <p>No instructor information available.</p>
+                            </div>
                         </div>
-                        <!-- Reviews Tab -->
                         <div class="pane" id="tab4" *ngIf="currentTab === 'tab4'">
                             <div class="courses-reviews">
-                                <h3>Reviews</h3>
-                                <div *ngIf="subCourseDetails?.reviews?.length; else noReviews">
-                                    <div *ngFor="let review of subCourseDetails.reviews">
-                                        <strong>{{ review.user }}</strong>: {{ review.comment }} ({{ review.rating }}/5)
-                                    </div>
+                                <h3>Course Rating</h3>
+                                <div class="rating">
+                                    <ng-container *ngFor="let star of [1, 2, 3, 4, 5]; let i = index">
+                                        <span class="bx"
+                                            [ngClass]="averageRating >= star ? 'bxs-star checked' : (averageRating > (star-1) && averageRating < star ? 'bxs-star-half checked' : 'bxs-star')"></span>
+                                    </ng-container>
                                 </div>
-                                <ng-template #noReviews>No reviews yet.</ng-template>
+                                <div class="rating-count">
+                                    <span>{{averageRating | number:'1.1-1'}} average based on {{course.reviews?.length || 0}} reviews.</span>
+                                </div>
+                            </div>
+                            <div class="courses-review-comments">
+                                <h3>{{reviews.length || 0}} Reviews</h3>
+                                <div *ngFor="let review of reviews">
+                                    <strong>{{ review.user || 'Anonymous' }}</strong>: {{ review.comment }}
+                                </div>
+                                <div *ngIf="!reviews || reviews.length === 0" class="no-reviews">
+                                    <p>No reviews available for this course.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-12">
+            <div class="col-lg-4 col-md-9">
+                
                 <div class="courses-details-info">
                     <div class="image">
-                        <img [src]="subCourseDetails?.image || 'img/courses/img1.jpg'" alt="image">
+                        <img src="img\image.png"
+                            (click)="openPopup()" alt="Course Preview">
                         <div class="content" (click)="openPopup()">
                             <i class="flaticon-play"></i>
-                            <span>Course Preview</span>
-                        </div>
+                        <span>Course Preview</span>
+                    </div>
                     </div>
                     <ul class="info">
                         <li class="price">
                             <div class="d-flex justify-content-between align-items-center">
                                 <span><i class="flaticon-tag"></i> Price</span>
-                                {{ subCourseDetails?.price }} SSP
+                                <span class="text-success">
+                                    <span *ngIf="course?.isFree" class="badge bg-success me-2">FREE</span>
+                                    <span *ngIf="course?.isPremium" class="badge bg-warning me-2">PREMIUM</span>
+                                    {{ course?.isFree ? 'Free' : (course?.price ? (course?.price + ' SSP') : 'N/A') }}
+                                </span>
                             </div>
                         </li>
-                        <li *ngIf="subCourseDetails?.instructor">
+                        <li>
                             <div class="d-flex justify-content-between align-items-center">
                                 <span><i class="flaticon-teacher"></i> Instructor</span>
-                                {{ subCourseDetails?.instructor.name }}
+                                <span>{{course?.instructor?.name || course?.educator || 'N/A'}}</span>
                             </div>
                         </li>
-                        <li *ngIf="subCourseDetails?.duration">
+                        <li>
                             <div class="d-flex justify-content-between align-items-center">
                                 <span><i class="flaticon-time"></i> Duration</span>
-                                {{ subCourseDetails?.duration }}
+                                <span>{{ course?.duration ? (course?.duration + ' hours') : 'N/A' }}</span>
                             </div>
                         </li>
-                        <li *ngIf="subCourseDetails?.lessons">
+                        <li>
                             <div class="d-flex justify-content-between align-items-center">
                                 <span><i class="flaticon-distance-learning"></i> Lessons</span>
-                                {{ subCourseDetails?.lessons }}
+                                <span class="text-success">{{course?.lessons || course?.SubjectMaster?.length || 0}}</span>
                             </div>
                         </li>
-                        <li *ngIf="subCourseDetails?.enrolled">
+                        <li>
                             <div class="d-flex justify-content-between align-items-center">
                                 <span><i class="flaticon-web"></i> Enrolled</span>
-                                {{ subCourseDetails?.enrolled }} students
+                                <span>{{ course?.enrolled ? (course?.enrolled + ' students') : '0 students' }}</span>
                             </div>
                         </li>
-                        <li *ngIf="subCourseDetails?.access">
+                        <li>
                             <div class="d-flex justify-content-between align-items-center">
                                 <span><i class="flaticon-lock"></i> Access</span>
-                                {{ subCourseDetails?.access }}
+                                <span>{{ course?.access || 'Lifetime' }}</span>
                             </div>
                         </li>
                     </ul>
                     <div class="btn-box">
-                        <a routerLink="/single-course-1" class="default-btn"><i class="flaticon-shopping-cart"></i>Add to Cart<span></span></a>
-                        <a routerLink="/single-course-1" class="default-btn"><i class="flaticon-tag"></i>Buy Now<span></span></a>
-                    </div>
-                    <div class="courses-share">
-                        <div class="share-info">
-                            <span>Share This Course <i class="flaticon-share"></i></span>
-                            <ul class="social-link">
-                                <li><a href="#" class="d-block" target="_blank"><i class='bx bxl-facebook'></i></a></li>
-                                <li><a href="#" class="d-block" target="_blank"><i class='bx bxl-twitter'></i></a></li>
-                                <li><a href="#" class="d-block" target="_blank"><i class='bx bxl-instagram'></i></a></li>
-                                <li><a href="#" class="d-block" target="_blank"><i class='bx bxl-linkedin'></i></a></li>
-                            </ul>
+                        <a (click)="subscribeCourse()" class="default-btn"><i class="flaticon-tag"></i>{{ isUserSubscribed == true ? 'Subscribed' : 'Buy Now'}}<span></span></a>
+                        <div *ngIf="showSubscribeMessage" class="subscribe-message">
+                            Login and continue to subscribe the course
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-
-<div class="courses-area bg-f8f9f8 pt-100 pb-70">
-    <div class="container">
-        <div class="section-title">
-            <h2>More Courses You Might Like</h2>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-lg-4 col-md-6">
-                <div class="single-courses-box">
-                    <div class="courses-image">
-                        <a routerLink="/single-course-1" class="d-block image">
-                            <img src="img/courses/img1.jpg" alt="image">
-                        </a>
-                        <a routerLink="." class="fav"><i class="flaticon-heart"></i></a>
-                        <div class="price shadow">$39</div>
-                    </div>
-                    <div class="courses-content">
-                        <div class="course-author d-flex align-items-center">
-                            <img src="img/user1.jpg" class="rounded-circle" alt="image">
-                            <span>Alex Morgan</span>
-                        </div>
-                        <h3><a routerLink="/single-course-1">The Data Science Course 2025: Complete Data Science Bootcamp</a></h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
-                        <ul class="courses-box-footer d-flex justify-content-between align-items-center">
-                            <li><i class='flaticon-agenda'></i> 15 Lessons</li>
-                            <li><i class='flaticon-people'></i> 145 Students</li>
-                        </ul>
-                    </div>
-                </div>
+    
+    <!-- Video Popup -->
+    <div class="video-popup position-fixed d-flex align-items-center justify-content-center text-center top-0 start-0 end-0 bottom-0"
+        *ngIf="isOpen">
+        <div class="popup-inner bg-white position-relative mx-auto">
+            <div *ngIf="safeUrl; else noVideo">
+                <iframe [src]="safeUrl" [title]="course?.title || 'Course Preview'" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
             </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="single-courses-box">
-                    <div class="courses-image">
-                        <a routerLink="/single-course-1" class="d-block image">
-                            <img src="img/courses/img2.jpg" alt="image">
-                        </a>
-                        <a routerLink="." class="fav"><i class="flaticon-heart"></i></a>
-                        <div class="price shadow">$49</div>
-                    </div>
-                    <div class="courses-content">
-                        <div class="course-author d-flex align-items-center">
-                            <img src="img/user2.jpg" class="rounded-circle" alt="image">
-                            <span>Sarah Taylor</span>
-                        </div>
-                        <h3><a routerLink="/single-course-1">Java Programming Masterclass for Software Developers</a></h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
-                        <ul class="courses-box-footer d-flex justify-content-between align-items-center">
-                            <li><i class='flaticon-agenda'></i> 20 Lessons</li>
-                            <li><i class='flaticon-people'></i> 100 Students</li>
-                        </ul>
-                    </div>
+            <ng-template #noVideo>
+                <div class="no-video-message">
+                    <p>No preview video available for this course.</p>
                 </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="single-courses-box">
-                    <div class="courses-image">
-                        <a routerLink="/single-course-1" class="d-block image">
-                            <img src="img/courses/img3.jpg" alt="image">
-                        </a>
-                        <a routerLink="." class="fav"><i class="flaticon-heart"></i></a>
-                        <div class="price shadow">$59</div>
-                    </div>
-                    <div class="courses-content">
-                        <div class="course-author d-flex align-items-center">
-                            <img src="img/user3.jpg" class="rounded-circle" alt="image">
-                            <span>David Warner</span>
-                        </div>
-                        <h3><a routerLink="/single-course-1">Deep Learning A-Z™: Hands-On Artificial Neural Networks</a></h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
-                        <ul class="courses-box-footer d-flex justify-content-between align-items-center">
-                            <li><i class='flaticon-agenda'></i> 20 Lessons</li>
-                            <li><i class='flaticon-people'></i> 150 Students</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+            </ng-template>
+            <button (click)="closePopup()" type="button"
+                class="close-btn p-0 border-0 d-flex align-items-center justify-content-center rounded-circle">
+                <i class='bx bx-x'></i>
+            </button>
         </div>
     </div>
-</div>
-
-<!-- Video Popup -->
-<div
-    class="video-popup position-fixed d-flex align-items-center justify-content-center text-center top-0 start-0 end-0 bottom-0"
-    *ngIf="isOpen"
->
-    <div class="popup-inner bg-white position-relative mx-auto">
-        <iframe src="https://www.youtube.com/embed/YDXQ_nociO4" title="Web Design Trends 2025" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        <button (click)="closePopup()" type="button" class="close-btn p-0 border-0 d-flex align-items-center justify-content-center rounded-circle">
-            <i class='bx bx-x'></i>
-        </button>
+    
+    <div *ngIf="showLoginToViewVideoMessage" class="login-to-view-video-message">
+        login to view the video
     </div>
-</div>
+    

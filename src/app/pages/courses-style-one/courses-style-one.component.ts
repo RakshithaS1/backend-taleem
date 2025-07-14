@@ -24,7 +24,7 @@ export class CoursesStyleOneComponent implements OnInit {
   }
 
   fetchCourseDetailsIds() {
-    this.api.get('course-details').subscribe((res: any) => {
+    this.api.getAllSubCourses().subscribe((res: any) => {
       if (Array.isArray(res)) {
         this.courseDetailsIds = new Set(res.map((cd: any) => cd.CourseID?.toString() || cd.id?.toString()));
       }
@@ -54,9 +54,19 @@ export class CoursesStyleOneComponent implements OnInit {
   }
 
   fetchSubCourses(mainCourseId: string) {
+    if (!mainCourseId) {
+      console.warn('fetchSubCourses called with invalid mainCourseId:', mainCourseId);
+      this.subCourses = [];
+      this.loading = false;
+      return;
+    }
     this.loading = true;
     this.api.getSubCourses(mainCourseId).subscribe((res: any) => {
-      this.subCourses = res || [];
+      // Set the image for all subcourses to the default image
+      this.subCourses = (res || []).map((sub: any) => ({
+        ...sub,
+        image: 'http://localhost:3214/uploads/img.jpg'
+      }));
       this.loading = false;
     }, () => { this.loading = false; });
   }
