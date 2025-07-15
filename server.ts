@@ -4,6 +4,7 @@ import express from 'express';
 import { fileURLToPath } from 'node:url';
 import { dirname, join, resolve } from 'node:path';
 import bootstrap from './src/main.server';
+import { createProxyMiddleware } from 'http-proxy-middleware';
 
 // The Express app is exported so that it can be used by serverless Functions.
 export function app(): express.Express {
@@ -14,11 +15,36 @@ export function app(): express.Express {
 
     const commonEngine = new CommonEngine();
 
+    // Add CORS middleware
+    server.use((req, res, next) => {
+        res.header('Access-Control-Allow-Origin', '*');
+        res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+        res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
+        
+        if (req.method === 'OPTIONS') {
+            res.sendStatus(200);
+        } else {
+            next();
+        }
+    });
+
+    // Parse JSON bodies
+    server.use(express.json());
+    server.use(express.urlencoded({ extended: true }));
+
     server.set('view engine', 'html');
     server.set('views', browserDistFolder);
 
-    // Example Express Rest API endpoints
-    // server.get('/api/**', (req, res) => { });
+    // API routes - proxy to your backend
+    server.use(
+      '/api/website',
+      createProxyMiddleware({
+        target: 'http://localhost:3214',
+        changeOrigin: true,
+        pathRewrite: { '^/api/website': '/v1/websiteRoutes' },
+      })
+    );
+
     // Serve static files from /browser
     server.get('**', express.static(browserDistFolder, {
         maxAge: '1y',

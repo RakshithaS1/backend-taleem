@@ -9,7 +9,7 @@ import { Observable , of, catchError} from 'rxjs';
 })
 export class ApiServices {
 
-  private readonly api = `${environment.API_URL}/v1/`;
+  private readonly api = `${environment.API_URL}/v1/websiteRoutes/`;
   constructor(private http: HttpClient, private commonService: CommonServices,
     // private security : SecurityService
     ) { }
@@ -50,8 +50,11 @@ export class ApiServices {
 
   handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
-      console.error(error);
-      // this.commonService.notifications(error.error.message, true);
+      console.error(`${operation} failed:`, error);
+      // Return empty array for GET requests to prevent null errors
+      if (operation.includes('get') || operation.includes('GET')) {
+        return of([] as T);
+      }
       return of(result as T);
     };
   }
@@ -68,10 +71,36 @@ export class ApiServices {
 
   // Fetch course details by id
   getCourseDetailsById(id: string): Observable<any> {
-    return this.get(`course-details/${id}`);
+    return this.get(`subcourse-details/${id}`);
   }
 
   getSubCourseDetails(courseId: string) {
     return this.get(`subcourse-details/${courseId}`);
+  }
+
+  // Get all subcourses for course details page
+  getAllSubCourses(): Observable<any> {
+    return this.get('sub-courses');
+  }
+
+  // Static course details for testing
+  getCourseDetailsStatic(): Observable<any> {
+    return this.get('course-details-static');
+  }
+  getWebsiteSubCourseDetails(courseId: string) {
+    return this.get(`subcourse-details/${courseId}`);
+  }
+  getSubCourseImage(courseId: string) {
+    return this.get(`subcourse-image/${courseId}`);
+  }
+
+  getSubCoursesCurriculumList(mainCourseId: number) {
+    return this.http.get<{ curriculum: any[] }>(`http://localhost:3214/v1/websiteRoutes/subcourses-curriculum/${mainCourseId}`);
+  }
+ 
+  // Get a specific subcourse curriculum
+  // Fetch reviews for a course by id
+  getCourseReviews(courseId: string) {
+    return this.http.get<{ reviews: any[] }>(`${this.api}getReviews?id=${courseId}`);
   }
 }
