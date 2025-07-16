@@ -1,15 +1,23 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { FunfactsStyleTwoComponent } from '../../common/funfacts-style-two/funfacts-style-two.component';
+import { CommonModule } from '@angular/common';
+import { FunfactsStyleOneComponent } from '../../common/funfacts-style-one/funfacts-style-one.component';
 import { PartnerComponent } from '../../common/partner/partner.component';
-import { FeedbackComponent } from '../../common/feedback/feedback.component';
 import { InstructorComponent } from '../../common/instructor/instructor.component';
-import { PremiumAccessComponent } from '../../common/premium-access/premium-access.component';
+import { TestimonialsComponent } from '../../common/testimonials/testimonials.component';
 
 @Component({
     selector: 'app-about-style-four',
-    imports: [RouterLink, FunfactsStyleTwoComponent, PartnerComponent, FeedbackComponent, InstructorComponent, PremiumAccessComponent],
+    imports: [RouterLink, CommonModule, FunfactsStyleOneComponent, PartnerComponent, InstructorComponent, TestimonialsComponent],
     templateUrl: './about-style-four.component.html',
     styleUrls: ['./about-style-four.component.scss']
 })
-export class AboutStyleFourComponent {}
+export class AboutStyleFourComponent {
+    isOpen = false;
+    openPopup(): void {
+        this.isOpen = true;
+    }
+    closePopup(): void {
+        this.isOpen = false;
+    }
+}

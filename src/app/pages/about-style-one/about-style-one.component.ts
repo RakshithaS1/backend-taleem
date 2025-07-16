@@ -1,15 +1,22 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { FunfactsFeedbackComponent } from '../../common/funfacts-feedback/funfacts-feedback.component';
-import { FeaturesStyleOneComponent } from '../../common/features-style-one/features-style-one.component';
-import { InstructorComponent } from '../../common/instructor/instructor.component';
-import { PremiumAccessComponent } from '../../common/premium-access/premium-access.component';
-import { PartnerComponent } from '../../common/partner/partner.component';
+import { FunfactsStyleTwoComponent } from '../../common/funfacts-style-two/funfacts-style-two.component';
 
 @Component({
     selector: 'app-about-style-one',
-    imports: [RouterLink, FunfactsFeedbackComponent, FeaturesStyleOneComponent, InstructorComponent, PremiumAccessComponent, PartnerComponent],
+    imports: [RouterLink, FunfactsStyleTwoComponent],
     templateUrl: './about-style-one.component.html',
     styleUrls: ['./about-style-one.component.scss']
 })
-export class AboutStyleOneComponent {}
+export class AboutStyleOneComponent {
+
+    // Video Popup
+    isOpen = false;
+    openPopup(): void {
+        this.isOpen = true;
+    }
+    closePopup(): void {
+        this.isOpen = false;
+    }
+
+}
